@@ -12,11 +12,13 @@ module.exports = {
     'standard-with-typescript',
     'next/core-web-vitals',
     'prettier',
+    'plugin:storybook/recommended',
   ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: './tsconfig.json',
   },
   plugins: ['react', '@typescript-eslint', 'import'],
   rules: {
