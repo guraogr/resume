@@ -10,9 +10,9 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'standard-with-typescript',
-    'next/core-web-vitals',
     'prettier',
     'plugin:storybook/recommended',
+    'next/core-web-vitals',
   ],
   overrides: [],
   parserOptions: {
@@ -20,9 +20,10 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react', '@typescript-eslint', 'import'],
+  plugins: ['react', '@typescript-eslint', 'import', 'unused-imports'],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'unused-imports/no-unused-imports': 'error',
     semi: ['error', 'never'],
     'require-jsdoc': ['off'],
     'import/order': [
