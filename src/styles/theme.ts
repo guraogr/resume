@@ -1,34 +1,17 @@
 import type { MantineThemeOverride } from '@mantine/core'
 
-import { BREAKPOINT_MAP } from './../../constans/index'
+import { BREAKPOINT_MAP } from '../constans/index'
+
+import { primary, grayAlpha, blueGray, semanticColors } from './colors'
+
 export const theme: MantineThemeOverride = {
   colorScheme: 'light',
-  white: '#ffffff',
+  white: semanticColors.white,
+  black: semanticColors.base_primary,
   colors: {
-    primary: [
-      '#EDF7F6',
-      '#CDEAE6',
-      '#ADDCD6',
-      '#8CCEC7',
-      '#6CC1B7',
-      '#4CB3A7',
-      '#3D8F85',
-      '#2E6B64',
-      '#1E4843',
-      '#0F2421',
-    ],
-    grayAlpha: [
-      '#F1F2F4',
-      '#D7DBE0',
-      '#BDC4CC',
-      '#A3ADB8',
-      '#8996A4',
-      '#6F7F90',
-      '#596673',
-      '#434C56',
-      '#2C333A',
-      '#16191D',
-    ],
+    primary,
+    grayAlpha,
+    blueGray,
   },
   primaryColor: 'primary',
   breakpoints: BREAKPOINT_MAP,
@@ -40,18 +23,30 @@ export const theme: MantineThemeOverride = {
       h1: {
         fontSize: 26,
         lineHeight: 1.5,
+        [`@media (max-width: ${BREAKPOINT_MAP.sm}px)`]: {
+          fontSize: 22,
+        },
       },
       h2: {
         fontSize: 22,
         lineHeight: 1.5,
+        [`@media (max-width: ${BREAKPOINT_MAP.sm}px)`]: {
+          fontSize: 10,
+        },
       },
       h3: {
         fontSize: 20,
         lineHeight: 1.5,
+        [`@media (max-width: ${BREAKPOINT_MAP.sm}px)`]: {
+          fontSize: 18,
+        },
       },
       h4: {
         fontSize: 16,
         lineHeight: 1.5,
+        [`@media (max-width: ${BREAKPOINT_MAP.sm}px)`]: {
+          fontSize: 16,
+        },
       },
     },
   },
