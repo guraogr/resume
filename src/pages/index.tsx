@@ -1,10 +1,10 @@
 import { Box } from '@mantine/core'
 
 import { Header } from '@/components/Header'
+import { PAGE_TITLE_MAP } from '@/constans/title'
 import { ProfileCard } from '@/features/ProfileCard'
 import { Head } from '@/features/misc/Head'
 import { DefaultLayout } from '@/layouts/Default'
-import { PAGE_TITLE_MAP } from 'constans/title'
 import { clientEnv } from 'env/schema'
 
 const headerLinks = [

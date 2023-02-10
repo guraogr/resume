@@ -1,7 +1,7 @@
 import AppHead from 'next/head'
 import { type PropsWithChildren, useMemo } from 'react'
 
-import { APP_DESCRIPTION, APP_NAME } from 'constans'
+import { APP_DESCRIPTION, APP_NAME } from '@/constans'
 
 interface Props {
   /*
