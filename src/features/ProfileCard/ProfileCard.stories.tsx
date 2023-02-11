@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof MyProfileCard> = (args) => (
 export const Default = Template.bind({})
 Default.args = {
   bg: '/images/profile_bg.png',
-  thumbnail: '/images/my_photo.png',
+  thumbnail: '/images/avatar.png',
   thumbnailAlt: 'おぐらひろきの自画像',
   name: 'おぐら ひろき',
   job: 'デザインエンジニア',
