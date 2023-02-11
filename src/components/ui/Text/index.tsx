@@ -5,7 +5,7 @@ import {
 } from '@mantine/core'
 import { memo, type PropsWithChildren } from 'react'
 
-import { TEXT_TYPE } from '@/constans/typography'
+import { TEXT_TYPE } from '@/styles/typography'
 
 type TextType = 'subheadline' | 'body' | 'caption1' | 'caption2'
 
@@ -19,19 +19,25 @@ const Text: React.FC<PropsWithChildren<Props>> = memo(function Text({
   ...args
 }) {
   const theme = useMantineTheme()
+  let textStyle
 
   switch (type) {
     case TEXT_TYPE.SUB_HEADLINE:
-      return <MantineText size={theme.fontSizes.md} fw={'bold'}></MantineText>
+      textStyle = { size: theme.fontSizes.md, fw: 'bold' }
+      break
     case TEXT_TYPE.CAPTION1:
-      return <MantineText size={theme.fontSizes.xs} fw={'normal'}></MantineText>
+      textStyle = { size: theme.fontSizes.xs, fw: 'normal' }
+      break
     case TEXT_TYPE.CAPTION2:
-      return <MantineText size={theme.fontSizes.xs} fw={'bold'}></MantineText>
+      textStyle = { size: theme.fontSizes.xs, fw: 'bold' }
+      break
+    default: // body
+      textStyle = { size: theme.fontSizes.md, fw: 'normal' }
+      break
   }
-  // Default: body
   return (
     <>
-      <MantineText size={theme.fontSizes.md} fw={'normal'} {...args}>
+      <MantineText size={textStyle.size} fw={'normal'} {...args}>
         {children}
       </MantineText>
     </>
