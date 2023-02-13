@@ -1,11 +1,11 @@
 import { Group, Header as MantineHeader, Text, Flex } from '@mantine/core'
 import Link from 'next/link'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 
 import { spacing } from '@/constans'
 import { semanticColors } from '@/styles/colors'
 
-interface Links {
+export interface Links {
   link: string
   label: string
 }
@@ -14,7 +14,7 @@ export interface HeaderProps {
   links: Links[]
 }
 
-export const Header: React.FC<HeaderProps> = ({ links }) => {
+export const Header: React.FC<HeaderProps> = memo(function Header({ links }) {
   const [active, setActive] = useState<string>(links[0]?.link ?? '')
   const items = links.map((link) => (
     <Link
@@ -55,4 +55,4 @@ export const Header: React.FC<HeaderProps> = ({ links }) => {
       </Flex>
     </MantineHeader>
   )
-}
+})
