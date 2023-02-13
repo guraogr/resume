@@ -26,5 +26,4 @@ export const Small = Template.bind({})
 Small.args = {
   width: 300,
   m: 'auto',
-  small: true,
 }

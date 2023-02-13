@@ -6,17 +6,16 @@ import { spacing } from '@/constans'
 import { semanticColors } from '@/styles/colors'
 
 interface Props extends TextProps {
-  small?: boolean
   width?: number | string
 }
 
 export const TextCard: React.FC<PropsWithChildren<Props>> = memo(
-  function TextCard({ small, width, children, ...args }) {
+  function TextCard({ width, children, ...args }) {
     const theme = useMantineTheme()
     return (
       <Text
         bg={semanticColors.bg}
-        py={small === true ? spacing[2] : spacing[8]}
+        py={spacing[4]}
         px={spacing[16]}
         size={theme.fontSizes.lg}
         fw={'bold'}
