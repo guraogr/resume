@@ -1,3 +1,16 @@
+## 開発環境
+
+・Next.js
+・TypeScript
+・MicroCMS
+・Storybook
+・Tanstack Query
+・husky
+・Zod
+・Aspida
+・ESLint
+・Prettier
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
