@@ -25,7 +25,13 @@ export const CompanyCard: React.FC<PropsWithChildren<Props>> = memo(
     ...args
   }) {
     return (
-      <Flex bg={semanticColors.white} py={spacing[5]} px={spacing[6]} {...args}>
+      <Flex
+        bg={semanticColors.white}
+        py={spacing[5]}
+        px={spacing[6]}
+        sx={{ borderRadius: 8 }}
+        {...args}
+      >
         <Image
           mr={spacing[3]}
           src={`${path.companyLogos}/${logo}`}

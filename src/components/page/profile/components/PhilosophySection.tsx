@@ -1,4 +1,4 @@
-import { Box, Title, Flex, Stack, List, Space } from '@mantine/core'
+import { Box, Title, Flex, List, Space } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
@@ -6,28 +6,31 @@ import { ListItem } from './ui/ListItem'
 
 import Text from '@/components/ui/Text'
 import { TextCard } from '@/components/ui/TextCard'
-import { contentsWidth, spacing } from '@/constans'
+import { spacing } from '@/constans'
+import { myFeatures, mySkills } from '@/constans/profile'
+import { useScreen } from '@/hooks/useScreen'
 import { ProfilePageLayout } from '@/layouts/ProfilePageLayout'
 import { semanticColors } from '@/styles/colors'
 import { HEADINGS } from '@/styles/typography'
 
 const PhilosophySection: React.FC = memo(function PhilosophySection() {
+  const { styles, isTabletScreen } = useScreen()
   return (
     <ProfilePageLayout components={'section'} bg={semanticColors.white}>
-      <Box sx={{ maxWidth: contentsWidth, margin: 'auto' }}>
+      <Box
+        w={styles.contentsWidth}
+        sx={{ maxWidth: styles.contentsMaxWidth, margin: 'auto' }}
+      >
         <Heading subTitle="フィロソフィー" mb={spacing[10]}>
           私がデザインエンジニアとして大切にするのは、
-          <br />
+          {!isTabletScreen && <br />}
           コラボレーションによる事業の推進です
         </Heading>
-        <Flex gap={spacing[5]} mb={spacing[9]}>
+        <Flex gap={spacing[3]} mb={spacing[9]} direction={styles.direction}>
           <TextCard>徹底した顧客理解</TextCard>
           <TextCard>正しい人を巻き込む</TextCard>
-          <Stack spacing={spacing[2]}>
-            <TextCard small>橋渡しになる</TextCard>
-            <TextCard small>一緒に進める</TextCard>
-          </Stack>
-          <TextCard>複数の視点で作る</TextCard>
+          <TextCard>橋渡しになる</TextCard>
+          <TextCard>一緒に進める</TextCard>
         </Flex>
         <Text mb={spacing[4]}>
           私は事業作りを軸とした広義なデザインを意識しており、「世の中に品質の高い価値をいち早く届ける」ことが事業推進にインパクトのあることだと考えています。
@@ -42,52 +45,39 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
         <Space h={spacing[16]} />
         <Box component="section">
           <Title size={HEADINGS.H2} order={2} mb={spacing[8]}>
-            人材特徴：自身を構成する要素
+            マイクレド
           </Title>
-          <List display={'flex'}>
-            <ListItem title="本質的課題解決" mr={spacing[8]}>
-              問題を解決するのが好きで、妥協せず課題の本質に向き合い続ける力があります。
-            </ListItem>
-            <ListItem title="本質的課題解決" mr={spacing[8]}>
-              問題を解決するのが好きで、妥協せず課題の本質に向き合い続ける力があります。
-            </ListItem>
-            <ListItem title="本質的課題解決">
-              問題を解決するのが好きで、妥協せず課題の本質に向き合い続ける力があります。
-            </ListItem>
+          <List display={'flex'} sx={{ flexDirection: styles.direction }}>
+            {myFeatures.map((feature, key) => (
+              <ListItem
+                key={key}
+                title={feature.title}
+                mr={isTabletScreen ? spacing[0] : spacing[8]}
+                mb={isTabletScreen ? spacing[10] : spacing[0]}
+              >
+                {feature.desc}
+              </ListItem>
+            ))}
           </List>
         </Box>
         <Space h={spacing[16]} />
         <Box component="section">
           <Title size={HEADINGS.H2} order={2} mb={spacing[8]}>
-            人材特徴：スキルセット
+            スキルセット
           </Title>
-          <List display={'flex'}>
-            <ListItem
-              title="UIデザイン"
-              label="2年の経験"
-              textBox="UI、情報設計、デザインシステム、スタイルガイド、0→1、MVP"
-              mr={spacing[8]}
-            >
-              複雑な欲求をヒアリングしてUIに落とし込む経験が豊富で、最もバリューが出せる領域です。対応してきた業界はHR
-              Tech, GovTech, EdTech, ConTechなどがあります。
-            </ListItem>
-            <ListItem
-              title="UIデザイン"
-              label="2年の経験"
-              textBox="UI、情報設計、デザインシステム、スタイルガイド、0→1、MVP"
-              mr={spacing[8]}
-            >
-              複雑な欲求をヒアリングしてUIに落とし込む経験が豊富で、最もバリューが出せる領域です。対応してきた業界はHR
-              Tech, GovTech, EdTech, ConTechなどがあります。
-            </ListItem>
-            <ListItem
-              title="UIデザイン"
-              label="2年の経験"
-              textBox="UI、情報設計、デザインシステム、スタイルガイド、0→1、MVP"
-            >
-              複雑な欲求をヒアリングしてUIに落とし込む経験が豊富で、最もバリューが出せる領域です。対応してきた業界はHR
-              Tech, GovTech, EdTech, ConTechなどがあります。
-            </ListItem>
+          <List display={'flex'} sx={{ flexDirection: styles.direction }}>
+            {mySkills.map((skill, key) => (
+              <ListItem
+                key={key}
+                title={skill.title}
+                label={skill.label}
+                textBox={skill.textBox}
+                mr={isTabletScreen ? spacing[0] : spacing[8]}
+                mb={isTabletScreen ? spacing[10] : spacing[0]}
+              >
+                {skill.desc}
+              </ListItem>
+            ))}
           </List>
         </Box>
       </Box>
