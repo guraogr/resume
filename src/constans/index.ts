@@ -24,7 +24,7 @@ export const grobalNavigationLinks = [
     label: 'プロフィール',
   },
   {
-    link: '/project',
+    link: '/projects',
     label: '参画プロジェクト',
   },
   {
