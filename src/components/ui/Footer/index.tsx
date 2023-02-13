@@ -4,7 +4,8 @@ import { memo } from 'react'
 
 import { type Links } from '../Header'
 
-import { contentsWidth, spacing } from '@/constans'
+import { spacing } from '@/constans'
+import { useScreen } from '@/hooks/useScreen'
 import { semanticColors } from '@/styles/colors'
 
 interface Props {
@@ -15,6 +16,7 @@ export const Footer: React.FC<Props> = memo(function Footer({
   links,
   ...args
 }) {
+  const { styles, isTabletScreen } = useScreen()
   const thme = useMantineTheme()
   const items = links.map((link) => (
     <List.Item key={link.label} sx={{ listStyle: 'none' }}>
@@ -28,7 +30,8 @@ export const Footer: React.FC<Props> = memo(function Footer({
           height: '100%',
           textDecoration: 'none',
           color: semanticColors.base_primary,
-          marginRight: spacing[8],
+          marginRight: isTabletScreen ? spacing[0] : spacing[8],
+          marginTop: isTabletScreen ? spacing[4] : spacing[0],
         }}
       >
         {link.label}
@@ -38,14 +41,19 @@ export const Footer: React.FC<Props> = memo(function Footer({
   return (
     <footer
       style={{
-        maxWidth: contentsWidth,
+        maxWidth: styles.contentsMaxWidth,
+        width: isTabletScreen ? styles.contentsWidth : 'auto',
         margin: 'auto',
         padding: `${spacing[8]}px ${spacing[0]}px`,
         backgroundColor: semanticColors.white,
       }}
       {...args}
     >
-      <List display={'flex'} mb={spacing[6]}>
+      <List
+        display={'flex'}
+        mb={spacing[6]}
+        sx={{ flexDirection: styles.direction }}
+      >
         {items}
       </List>
       <List mb={spacing[6]}>
