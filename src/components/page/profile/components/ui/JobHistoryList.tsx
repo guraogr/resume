@@ -22,7 +22,7 @@ export const JobHisotryList: React.FC<Props> = memo(function Heading({
     } else {
       return isTabletScreen ? '100%' : '32%'
     }
-  }, [column])
+  }, [column, isTabletScreen])
 
   return (
     <List
