@@ -1,5 +1,5 @@
-import { List } from '@mantine/core'
-import { memo, useCallback } from 'react'
+import { Grid } from '@mantine/core'
+import { memo } from 'react'
 
 import { CompanyCard } from '@/components/ui/CompanyCard.tsx'
 import { spacing } from '@/constans'
@@ -8,34 +8,23 @@ import { type JobHistries } from '@/models/JobHistory'
 
 interface Props {
   histories: JobHistries
-  column: 1 | 2 | 3
 }
 
 export const JobHisotryList: React.FC<Props> = memo(function Heading({
   histories,
-  column,
 }) {
-  const { isTabletScreen, styles } = useScreen()
-  const setListItemWidth = useCallback(() => {
-    if (column === 2) {
-      return isTabletScreen ? '100%' : '49%'
-    } else {
-      return isTabletScreen ? '100%' : '32%'
-    }
-  }, [column, isTabletScreen])
+  const { isTabletScreen } = useScreen()
 
   return (
-    <List
-      display={'flex'}
+    <Grid
+      grow
+      columns={isTabletScreen ? 1 : 3}
       sx={{
         justifyContent: 'space-between',
-        flexWrap: column === 2 ? 'nowrap' : 'wrap',
-        flexDirection: styles.direction,
       }}
-      styles={{ itemWrapper: { width: '100%' } }}
     >
       {histories.map((job, key) => (
-        <List.Item key={key} w={setListItemWidth()} mb={spacing[4]}>
+        <Grid.Col key={key} mb={spacing[4]} span={1}>
           <CompanyCard
             logo={job.logo}
             logoAlt={job.logoAlt}
@@ -45,8 +34,8 @@ export const JobHisotryList: React.FC<Props> = memo(function Heading({
           >
             {job.desc}
           </CompanyCard>
-        </List.Item>
+        </Grid.Col>
       ))}
-    </List>
+    </Grid>
   )
 })

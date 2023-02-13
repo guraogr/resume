@@ -1,4 +1,4 @@
-import { Box, Flex, Image, type FlexProps } from '@mantine/core'
+import { Box, Image, type FlexProps } from '@mantine/core'
 import { memo, type PropsWithChildren } from 'react'
 
 import Text from '@/components/ui/Text'
@@ -25,7 +25,9 @@ export const CompanyCard: React.FC<PropsWithChildren<Props>> = memo(
     ...args
   }) {
     return (
-      <Flex
+      <Box
+        component="article"
+        display={'flex'}
         bg={semanticColors.white}
         py={spacing[5]}
         px={spacing[6]}
@@ -44,7 +46,7 @@ export const CompanyCard: React.FC<PropsWithChildren<Props>> = memo(
           <Text mb={spacing[2]}>{workedTime}</Text>
           <Text c={semanticColors.base_tirtiary}>{children}</Text>
         </Box>
-      </Flex>
+      </Box>
     )
   }
 )

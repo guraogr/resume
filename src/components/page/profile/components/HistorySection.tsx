@@ -51,7 +51,7 @@ const HistorySection: React.FC = memo(function HistorySection() {
           >
             正社員
           </SubHeading>
-          <JobHisotryList histories={fulltimeJobHistory} column={2} />
+          <JobHisotryList histories={fulltimeJobHistory} />
         </Box>
         <Space h={spacing[16]} />
         <Box component="section">
@@ -61,7 +61,7 @@ const HistorySection: React.FC = memo(function HistorySection() {
           >
             業務委託
           </SubHeading>
-          <JobHisotryList histories={partimeJobHistory} column={3} />
+          <JobHisotryList histories={partimeJobHistory} />
         </Box>
         <Space h={spacing[16]} />
         <Box component="section">
@@ -71,7 +71,7 @@ const HistorySection: React.FC = memo(function HistorySection() {
           >
             インターン・アルバイト
           </SubHeading>
-          <JobHisotryList histories={internHistory} column={2} />
+          <JobHisotryList histories={internHistory} />
         </Box>
       </Box>
     </ProfilePageLayout>
