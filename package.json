@@ -4,13 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:aspida": "aspida --watch",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 ",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "api:build": "aspida"
   },
   "dependencies": {
+    "@aspida/fetch": "^1.11.0",
+    "@aspida/react-query": "^1.11.0",
     "@emotion/react": "^11.10.5",
     "@mantine/core": "^5.10.3",
     "@mantine/hooks": "^5.10.3",
@@ -19,9 +23,11 @@
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "aspida": "^1.11.0",
     "eslint": "^8.33.0",
     "eslint-config-next": "13.1.6",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "microcms-js-sdk": "^2.3.2",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -24,6 +24,7 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'unused-imports/no-unused-imports': 'error',
+    '@typescript-eslint/prefer-optional-chain': 'warn',
     semi: ['error', 'never'],
     'require-jsdoc': ['off'],
     'import/order': [

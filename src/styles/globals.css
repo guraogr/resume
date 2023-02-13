@@ -101,6 +101,12 @@ a {
   font-size: 14px;
 }
 
+ul,
+li,
+ol {
+  list-style: none;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
