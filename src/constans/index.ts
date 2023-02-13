@@ -17,4 +17,20 @@ export const spacing = [
 
 export const path = {
   images: '/images',
+  companyLogos: '/images/company_logos',
 }
+
+export const grobalNavigationLinks = [
+  {
+    link: '/',
+    label: 'プロフィール',
+  },
+  {
+    link: '/project',
+    label: '参画プロジェクト',
+  },
+  {
+    link: '/contact',
+    label: 'お問い合わせ',
+  },
+]
