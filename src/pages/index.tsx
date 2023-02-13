@@ -1,12 +1,10 @@
-import { useQuery } from '@tanstack/react-query'
-import { type GetStaticProps } from 'next'
-
 import ProfilePage from '@/components/page/profile'
 import { Header } from '@/components/ui/Header'
 import { PAGE_TITLE_MAP } from '@/constans/title'
 import { Head } from '@/features/Misc/Head'
 import { DefaultLayout } from '@/layouts/Default'
-import apiClient from '@/lib/apiClient'
+import { type JobHistries } from '@/models/JobHistory'
+import { type GetListRequestQuery } from '@/models/Request'
 import { clientEnv } from 'env/validators'
 
 const headerLinks = [
@@ -25,16 +23,10 @@ const headerLinks = [
 ]
 
 interface Props {
-  histories: any
+  data: GetListRequestQuery<JobHistries>
 }
 
 const Home: React.FC<Props> = (props) => {
-  const { data } = useQuery({
-    queryKey: ['job_history'],
-    queryFn: apiClient.jobHistory.$get(),
-    initialData: props.histories,
-  })
-  console.log(data)
   return (
     <>
       <Head
@@ -48,11 +40,6 @@ const Home: React.FC<Props> = (props) => {
       </DefaultLayout>
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const histories = await apiClient.jobHistory.$get()
-  return { props: { histories } }
 }
 
 export default Home
