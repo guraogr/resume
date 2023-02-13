@@ -37,7 +37,7 @@ const Text: React.FC<PropsWithChildren<Props>> = memo(function Text({
   }
   return (
     <>
-      <MantineText size={textStyle.size} fw={'normal'} {...args}>
+      <MantineText size={textStyle.size} fw={textStyle.fw} {...args}>
         {children}
       </MantineText>
     </>

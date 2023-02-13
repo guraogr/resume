@@ -1,4 +1,4 @@
-import { List, Divider, useMantineTheme, type FooterProps } from '@mantine/core'
+import { List, Divider, useMantineTheme } from '@mantine/core'
 import Link from 'next/link'
 import { memo } from 'react'
 
@@ -7,7 +7,7 @@ import { type Links } from '../Header'
 import { contentsWidth, spacing } from '@/constans'
 import { semanticColors } from '@/styles/colors'
 
-interface Props extends FooterProps {
+interface Props {
   links: Links[]
 }
 
@@ -37,11 +37,11 @@ export const Footer: React.FC<Props> = memo(function Footer({
   ))
   return (
     <footer
-      bg={semanticColors.white}
       style={{
         maxWidth: contentsWidth,
         margin: 'auto',
         padding: `${spacing[8]}px ${spacing[0]}px`,
+        backgroundColor: semanticColors.white,
       }}
       {...args}
     >
