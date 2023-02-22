@@ -10,7 +10,7 @@ import { JobType } from '@/constans/http'
 import { useFetchJobHistory } from '@/features/JobHistory/api/fetchJobHistory'
 import { useScreen } from '@/hooks/useScreen'
 import { ProfilePageLayout } from '@/layouts/ProfilePageLayout'
-import { fetchJobHistoriesSchema } from '@/lib/http/jobHistorySchema'
+import { fetchJobHistoriesSchema } from '@/lib/http/schema/jobHistorySchema'
 import { semanticColors } from '@/styles/colors'
 
 const HistorySection: React.FC = memo(function HistorySection() {

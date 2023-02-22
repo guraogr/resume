@@ -27,6 +27,8 @@ export interface HeaderProps {
 export const Header: React.FC<HeaderProps> = memo(function Header({ links }) {
   const [opened, { toggle }] = useDisclosure(false)
   const [active, setActive] = useState<string>(links[0]?.link ?? '')
+  // TODO: 1回目プロジェクトを押しても効かない
+  // console.log(active)
   const { isTabletScreen } = useScreen()
   const items = links.map((link, key) => (
     <List.Item

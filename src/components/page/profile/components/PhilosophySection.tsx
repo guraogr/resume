@@ -1,10 +1,9 @@
-import { Box, Title, Flex, List, Space } from '@mantine/core'
+import { Box, Title, Flex, List, Space, Text } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
 import { ListItem } from './ui/ListItem'
 
-import Text from '@/components/ui/Text'
 import { TextCard } from '@/components/ui/TextCard'
 import { spacing } from '@/constans'
 import { myFeatures, mySkills } from '@/constans/profile'
@@ -32,7 +31,7 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
           <TextCard>橋渡しになる</TextCard>
           <TextCard>一緒に進める</TextCard>
         </Flex>
-        <Text mb={spacing[4]}>
+        <Text component={'p'} mb={spacing[4]}>
           私は事業作りを軸とした広義なデザインを意識しており、「世の中に品質の高い価値をいち早く届ける」ことが事業推進にインパクトのあることだと考えています。
         </Text>
         <Text>

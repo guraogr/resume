@@ -1,23 +1,17 @@
-import { QueryClient, dehydrate } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { type GetStaticProps } from 'next'
+import { dehydrate, QueryClient } from '@tanstack/react-query'
+import { type GetStaticProps, type GetStaticPaths } from 'next'
 
-import ProjectsPage from '@/components/page/projects'
+import ProjectPage from '@/components/page/project'
 import { Footer } from '@/components/ui/Footer'
 import { Header } from '@/components/ui/Header'
 import { grobalNavigationLinks } from '@/constans'
 import { PAGE_TITLE_MAP } from '@/constans/title'
 import { Head } from '@/features/Misc/Head'
-import {
-  fetchProjects,
-  useFetchProjects,
-} from '@/features/Projects/api/fetchProjects'
+import { fetchProject } from '@/features/Projects/api/fetchProject'
 import { DefaultLayout } from '@/layouts/Default'
 import { clientEnv } from 'env/validators'
 
-const Projects: React.FC = () => {
-  const { data } = useFetchProjects()
-  console.log(data)
+const Project: React.FC = () => {
   return (
     <>
       <Head
@@ -27,18 +21,30 @@ const Projects: React.FC = () => {
       />
       <Header links={grobalNavigationLinks} />
       <DefaultLayout>
-        <ProjectsPage />
+        <ProjectPage />
       </DefaultLayout>
       <Footer links={grobalNavigationLinks} />
-      <ReactQueryDevtools initialIsOpen={false} />
     </>
   )
 }
-export const getStaticProps: GetStaticProps = async () => {
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    fallback: 'blocking',
+    paths: [],
+  }
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { params } = context
+  if (!params?.id) {
+    throw new Error('Error: IDが見つかりませんでした')
+  }
+  const id = params.id
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery(
-    ['projects'],
-    async () => await fetchProjects()
+    ['project', id],
+    async () => await fetchProject(id)
   )
   return {
     props: {
@@ -47,4 +53,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Projects
+export default Project

@@ -16,6 +16,7 @@ export const spacing = [
 export const path = {
   images: '/images',
   companyLogos: '/images/company_logos',
+  projectThumbs: '/images/project_thumbs',
 }
 
 export const grobalNavigationLinks = [

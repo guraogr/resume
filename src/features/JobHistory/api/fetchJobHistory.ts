@@ -7,7 +7,7 @@ import { type GetListRequestQuery } from '@/models/Request'
 export const fetchJobHistory = async (): Promise<
   GetListRequestQuery<JobHistries>
 > => {
-  return apiClient.job_history.$get()
+  return await apiClient.job_history.$get()
 }
 
 type UseFetchJobHistoryResult = UseQueryResult<GetListRequestQuery<JobHistries>>

@@ -23,7 +23,7 @@ export const useScreen: UseScreen = () => {
   const isTabletScreen = useMediaQuery(`(max-width: ${BREAKPOINT_MAP.md}px)`)
   const styles = {
     contentsMaxWidth: isTabletScreen ? 640 : 1140,
-    contentsWidth: isTabletScreen ? '80%' : '90%',
+    contentsWidth: isTabletScreen ? '86%' : '95%',
     direction: isTabletScreen ? ('column' as const) : ('row' as const),
     align: isTabletScreen ? ('center' as const) : ('left' as const),
     justify: isTabletScreen ? ('center' as const) : ('left' as const),

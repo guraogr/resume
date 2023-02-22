@@ -1,4 +1,4 @@
-import { List, Divider, useMantineTheme } from '@mantine/core'
+import { List, Divider, useMantineTheme, Box } from '@mantine/core'
 import Link from 'next/link'
 import { memo } from 'react'
 
@@ -41,42 +41,47 @@ export const Footer: React.FC<Props> = memo(function Footer({
   return (
     <footer
       style={{
-        maxWidth: styles.contentsMaxWidth,
-        width: isTabletScreen ? styles.contentsWidth : 'auto',
-        margin: 'auto',
         padding: `${spacing[8]}px ${spacing[0]}px`,
         backgroundColor: semanticColors.white,
       }}
       {...args}
     >
-      <List
-        display={'flex'}
-        mb={spacing[6]}
-        sx={{ flexDirection: styles.direction }}
-      >
-        {items}
-      </List>
-      <List mb={spacing[6]}>
-        <Link
-          href={'https://github.com/guraogr'}
-          as={'a'}
-          style={{
-            color: semanticColors.base_primary,
-            textDecoration: 'none',
-          }}
-        >
-          Github
-        </Link>
-      </List>
-      <Divider my="sm" color={semanticColors.border} />
-      <small
-        style={{
-          fontSize: thme.fontSizes.xs,
-          color: semanticColors.base_tirtiary,
+      <Box
+        sx={{
+          margin: 'auto',
+          maxWidth: styles.contentsMaxWidth,
+          width: isTabletScreen ? styles.contentsWidth : 'auto',
         }}
       >
-        ©️copyright 2023 Hiroki Ogura
-      </small>
+        <List
+          display={'flex'}
+          mb={spacing[6]}
+          sx={{ flexDirection: styles.direction }}
+        >
+          {items}
+        </List>
+        <List mb={spacing[6]}>
+          <Link
+            href={'https://github.com/guraogr'}
+            as={'a'}
+            style={{
+              color: semanticColors.base_primary,
+              textDecoration: 'none',
+            }}
+          >
+            Github
+          </Link>
+        </List>
+        <Divider my="sm" color={semanticColors.border} />
+        <small
+          style={{
+            fontSize: thme.fontSizes.xs,
+            color: semanticColors.base_tirtiary,
+          }}
+        >
+          ©️copyright 2023 Hiroki Ogura
+        </small>
+      </Box>
     </footer>
   )
 })
