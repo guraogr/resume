@@ -1,4 +1,4 @@
-import { Box, Space } from '@mantine/core'
+import { Box, Container, Space } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
@@ -8,13 +8,11 @@ import { SubHeading } from './ui/SubHeading'
 import { spacing } from '@/constans'
 import { JobType } from '@/constans/http'
 import { useFetchJobHistory } from '@/features/JobHistory/api/fetchJobHistory'
-import { useScreen } from '@/hooks/useScreen'
 import { ProfilePageLayout } from '@/layouts/ProfilePageLayout'
 import { fetchJobHistoriesSchema } from '@/lib/http/schema/jobHistorySchema'
 import { semanticColors } from '@/styles/colors'
 
 const HistorySection: React.FC = memo(function HistorySection() {
-  const { styles } = useScreen()
   const { data, isLoading, isError } = useFetchJobHistory()
   if (isLoading) {
     return <></>
@@ -34,11 +32,8 @@ const HistorySection: React.FC = memo(function HistorySection() {
   )
 
   return (
-    <ProfilePageLayout components={'section'} bg={semanticColors.bg}>
-      <Box
-        w={styles.contentsWidth}
-        sx={{ maxWidth: styles.contentsMaxWidth, margin: 'auto' }}
-      >
+    <ProfilePageLayout bg={semanticColors.bg}>
+      <Container size={'lg'} m={'auto'}>
         <Heading subTitle="フィロソフィー" mb={spacing[10]}>
           私がデザインエンジニアとして大切にするのは、
           <br />
@@ -73,7 +68,7 @@ const HistorySection: React.FC = memo(function HistorySection() {
           </SubHeading>
           <JobHisotryList histories={internHistory} />
         </Box>
-      </Box>
+      </Container>
     </ProfilePageLayout>
   )
 })

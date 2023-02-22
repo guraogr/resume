@@ -1,4 +1,11 @@
-import { Flex, Avatar, Box, Title, useMantineTheme, Image } from '@mantine/core'
+import {
+  Avatar,
+  Box,
+  Title,
+  useMantineTheme,
+  Image,
+  Container,
+} from '@mantine/core'
 import { memo } from 'react'
 
 import Text from '@/components/ui/Text'
@@ -12,14 +19,14 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
   const { isTabletScreen, styles } = useScreen()
   const theme = useMantineTheme()
   return (
-    <ProfilePageLayout components={'section'} bg={semanticColors.bg}>
-      <Flex
-        direction={styles.direction}
-        align={styles.align}
-        w={styles.contentsWidth}
+    <ProfilePageLayout bg={semanticColors.bg}>
+      <Container
+        size={'lg'}
+        display={'flex'}
+        m={'auto'}
         sx={{
-          margin: 'auto',
-          maxWidth: styles.contentsMaxWidth,
+          flexDirection: styles.direction,
+          alignItems: styles.align,
         }}
       >
         <Avatar
@@ -52,7 +59,7 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
             <Image src={'/images/github.svg'} width={24} alt="github" />
           </Box>
         </Box>
-      </Flex>
+      </Container>
     </ProfilePageLayout>
   )
 })

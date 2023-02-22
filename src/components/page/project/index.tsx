@@ -1,3 +1,4 @@
+import { Container } from '@mantine/core'
 import { useRouter } from 'next/router'
 import { memo } from 'react'
 
@@ -8,7 +9,7 @@ const ProjectPage = memo(function ProjectsPage() {
   const { id } = router.query
   const { data } = useFetchProject(id as string)
   console.log(data)
-  return <></>
+  return <Container></Container>
 })
 
 export default ProjectPage

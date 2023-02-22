@@ -1,4 +1,4 @@
-import { List, Divider, useMantineTheme, Box } from '@mantine/core'
+import { List, Divider, useMantineTheme, Container } from '@mantine/core'
 import Link from 'next/link'
 import { memo } from 'react'
 
@@ -39,19 +39,13 @@ export const Footer: React.FC<Props> = memo(function Footer({
     </List.Item>
   ))
   return (
-    <footer
-      style={{
-        padding: `${spacing[8]}px ${spacing[0]}px`,
-        backgroundColor: semanticColors.white,
-      }}
-      {...args}
-    >
-      <Box
-        sx={{
-          margin: 'auto',
-          maxWidth: styles.contentsMaxWidth,
-          width: isTabletScreen ? styles.contentsWidth : 'auto',
+    <Container size={'lg'}>
+      <footer
+        style={{
+          padding: `${spacing[8]}px ${spacing[0]}px`,
+          backgroundColor: semanticColors.white,
         }}
+        {...args}
       >
         <List
           display={'flex'}
@@ -79,9 +73,9 @@ export const Footer: React.FC<Props> = memo(function Footer({
             color: semanticColors.base_tirtiary,
           }}
         >
-          ©️copyright 2023 Hiroki Ogura
+          &copy;copyright 2023 Hiroki Ogura
         </small>
-      </Box>
-    </footer>
+      </footer>
+    </Container>
   )
 })

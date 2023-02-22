@@ -3,6 +3,7 @@ import type { MantineThemeOverride } from '@mantine/core'
 import { BREAKPOINT_MAP } from '../constans/index'
 
 import { primary, grayAlpha, blueGray, semanticColors } from './colors'
+import { sizes } from './sizes'
 
 export const theme: MantineThemeOverride = {
   colorScheme: 'light',
@@ -60,6 +61,11 @@ export const theme: MantineThemeOverride = {
   components: {
     Button: {
       defaultProps: { color: 'primary' },
+    },
+    Container: {
+      defaultProps: {
+        sizes,
+      },
     },
   },
 }

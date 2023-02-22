@@ -1,4 +1,4 @@
-import { Box, Title, Flex, List, Space, Text } from '@mantine/core'
+import { Box, Title, Flex, List, Space, Text, Container } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
@@ -15,11 +15,8 @@ import { HEADINGS } from '@/styles/typography'
 const PhilosophySection: React.FC = memo(function PhilosophySection() {
   const { styles, isTabletScreen } = useScreen()
   return (
-    <ProfilePageLayout components={'section'} bg={semanticColors.white}>
-      <Box
-        w={styles.contentsWidth}
-        sx={{ maxWidth: styles.contentsMaxWidth, margin: 'auto' }}
-      >
+    <ProfilePageLayout bg={semanticColors.white}>
+      <Container size={'lg'} m={'auto'}>
         <Heading subTitle="フィロソフィー" mb={spacing[10]}>
           私がデザインエンジニアとして大切にするのは、
           {!isTabletScreen && <br />}
@@ -79,7 +76,7 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
             ))}
           </List>
         </Box>
-      </Box>
+      </Container>
     </ProfilePageLayout>
   )
 })

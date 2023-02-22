@@ -1,8 +1,11 @@
-import { type NextApiResponse } from 'next'
+import { type NextApiRequest, type NextApiResponse } from 'next'
 
 import { microCmsClient } from '@/lib/http/microCmsClient'
 
-const getJobHistory = async (res: NextApiResponse): Promise<any> => {
+const getJobHistory = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> => {
   const response = await microCmsClient.get({
     endpoint: 'job_history',
   })

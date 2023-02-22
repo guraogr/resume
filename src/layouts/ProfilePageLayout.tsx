@@ -5,13 +5,12 @@ import { spacing } from '@/constans'
 
 interface Props extends BoxProps {
   bg: string
-  components: any
 }
 
 export const ProfilePageLayout: React.FC<PropsWithChildren<Props>> = memo(
-  function ProfilePageLayout({ bg, components, children }) {
+  function ProfilePageLayout({ bg, children }) {
     return (
-      <Box component={components} bg={bg} py={spacing[14]}>
+      <Box component={'section'} bg={bg} py={spacing[14]}>
         {children}
       </Box>
     )

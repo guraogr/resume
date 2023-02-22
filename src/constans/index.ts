@@ -28,8 +28,8 @@ export const grobalNavigationLinks = [
     link: '/projects',
     label: '参画プロジェクト',
   },
-  {
-    link: '/contact',
-    label: 'お問い合わせ',
-  },
+  // {
+  //   link: '/contact',
+  //   label: 'お問い合わせ',
+  // },
 ]
