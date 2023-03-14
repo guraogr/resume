@@ -15,6 +15,13 @@ import { HEADINGS } from '@/styles/typography'
 const ProjectsPage = memo(function ProjectsPage() {
   const { data, isLoading, isError } = useFetchProjects()
   const { isTabletScreen, isSmartPhoneScreen } = useScreen()
+  const workCategory = [
+    'product_design',
+    'communication_design',
+    'hobby',
+    'article',
+  ]
+
   const breadcrumsItems = [
     {
       label: PAGE_TITLE_MAP.PROJECTS,
@@ -66,7 +73,7 @@ const ProjectsPage = memo(function ProjectsPage() {
       </Box>
       <Container size={'lg'} py={spacing[10]}>
         <Tabs
-          defaultValue="product_design"
+          defaultValue={workCategory[0]}
           styles={{
             tab: {
               fontWeight: 'bold',
@@ -77,40 +84,45 @@ const ProjectsPage = memo(function ProjectsPage() {
           }}
         >
           <Tabs.List mb={spacing[6]} grow>
-            <Tabs.Tab value="product_design">プロダクトデザイン</Tabs.Tab>
-            <Tabs.Tab value="communication_design">
+            <Tabs.Tab value={workCategory[0]}>プロダクトデザイン</Tabs.Tab>
+            <Tabs.Tab value={workCategory[1]}>
               コミュニケーションデザイン
             </Tabs.Tab>
-            <Tabs.Tab value="hobby">趣味制作</Tabs.Tab>
+            <Tabs.Tab value={workCategory[2]}>趣味制作</Tabs.Tab>
+            <Tabs.Tab value={workCategory[3]}>執筆記事</Tabs.Tab>
           </Tabs.List>
           {isLoading ? (
             <Loader></Loader>
           ) : (
-            <Tabs.Panel value="product_design" pt={spacing[4]}>
-              <Grid columns={setColumn()} gutter={spacing[8]}>
-                {fetchProjectsSchema
-                  .parse(data)
-                  .contents.map((project, key) => (
-                    <>
-                      {project.category[0] === 'product_design' && (
-                        <Grid.Col key={key} span={1}>
-                          <ProjectCard
-                            id={project.id}
-                            thumb={project.thumb}
-                            thumbAlt={project.thumbAlt}
-                            productName={project.productName}
-                            taskType={project.taskType}
-                            title={project.title}
-                            desc={project.desc}
-                            role={project.role}
-                            projectTime={project.projectTime}
-                          />
-                        </Grid.Col>
-                      )}
-                    </>
-                  ))}
-              </Grid>
-            </Tabs.Panel>
+            <>
+              {workCategory.map((category, key) => (
+                <Tabs.Panel value={category} pt={spacing[4]} key={key}>
+                  <Grid columns={setColumn()} gutter={spacing[8]}>
+                    {fetchProjectsSchema
+                      .parse(data)
+                      .contents.map((project, key) => (
+                        <>
+                          {project.category[0] === category && (
+                            <Grid.Col key={key} span={1}>
+                              <ProjectCard
+                                id={project.id}
+                                thumb={project.thumb}
+                                thumbAlt={project.thumbAlt}
+                                productName={project.productName}
+                                taskType={project.taskType}
+                                title={project.title}
+                                desc={project.desc}
+                                role={project.role}
+                                projectTime={project.projectTime}
+                              />
+                            </Grid.Col>
+                          )}
+                        </>
+                      ))}
+                  </Grid>
+                </Tabs.Panel>
+              ))}
+            </>
           )}
         </Tabs>
       </Container>

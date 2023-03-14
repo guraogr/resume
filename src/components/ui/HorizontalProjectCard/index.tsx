@@ -6,6 +6,7 @@ import CustomText from '@/components/ui/Text'
 import { path, spacing } from '@/constans'
 import { useScreen } from '@/hooks/useScreen'
 import { semanticColors } from '@/styles/colors'
+import { shadow } from '@/styles/shadow'
 import { TEXT_TYPE, HEADINGS } from '@/styles/typography'
 
 interface Props {
@@ -20,7 +21,17 @@ export const HorizontalProjectCard: React.FC<Props> = memo(
         <Box
           component="article"
           display={'flex'}
-          sx={{ alignItems: 'center', flexDirection: styles.direction }}
+          sx={{
+            alignItems: 'center',
+            flexDirection: styles.direction,
+            boxShadow: shadow.normal,
+            transition: '0.15s ease-in-out',
+            cursor: 'pointer',
+            '&:hover': {
+              transform: 'translate(0, -6px)',
+              opacity: '0.7',
+            },
+          }}
           px={spacing[4]}
           py={spacing[4]}
           bg={semanticColors.white}

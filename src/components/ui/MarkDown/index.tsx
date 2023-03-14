@@ -38,7 +38,13 @@ export const Markdown: React.FC<Props> = memo(function Markdown({ source }) {
           )
         }
         if (domNode.name === 'img') {
-          return <Image alt={domNode.attribs.alt} src={domNode.attribs.src} />
+          return (
+            <Image
+              mt={spacing[4]}
+              alt={domNode.attribs.alt}
+              src={domNode.attribs.src}
+            />
+          )
         }
       }
     },

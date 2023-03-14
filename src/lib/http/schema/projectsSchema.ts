@@ -13,6 +13,8 @@ export const projectSchema = z.object({
   contents: z.string(),
   id: z.string(),
   category: z.string().array(),
+  productDetail: z.string().optional(),
+  productUrl: z.string().optional(),
 })
 
 export const projectsSchema = z.array(projectSchema)

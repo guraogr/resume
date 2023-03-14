@@ -12,6 +12,8 @@ interface Props extends FlexProps {
   companyName: string
   job: string
   workedTime: string
+  exp: string
+  handleClick: (exp: string) => void
 }
 
 export const CompanyCard: React.FC<PropsWithChildren<Props>> = memo(
@@ -22,6 +24,8 @@ export const CompanyCard: React.FC<PropsWithChildren<Props>> = memo(
     job,
     workedTime,
     children,
+    exp,
+    handleClick,
     ...args
   }) {
     return (
@@ -31,7 +35,18 @@ export const CompanyCard: React.FC<PropsWithChildren<Props>> = memo(
         bg={semanticColors.white}
         py={spacing[5]}
         px={spacing[6]}
-        sx={{ borderRadius: 8 }}
+        sx={{
+          borderRadius: 8,
+          transition: '0.15s ease-in-out',
+          cursor: 'pointer',
+          '&:hover': {
+            transform: 'translate(0, -6px)',
+            opacity: '0.7',
+          },
+        }}
+        onClick={() => {
+          handleClick(exp)
+        }}
         {...args}
       >
         <Image

@@ -1,28 +1,26 @@
 import {
   Container,
   Loader,
-  Image,
   Flex,
-  Box,
-  Title,
   Stack,
   Space,
   Button,
+  Box,
 } from '@mantine/core'
 import { useRouter } from 'next/router'
 import { memo, useCallback } from 'react'
 
+import AboutProject from './components/aboutProject'
+
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { HorizontalProjectCard } from '@/components/ui/HorizontalProjectCard'
 import { Markdown } from '@/components/ui/MarkDown'
-import CustomText from '@/components/ui/Text'
-import { path, spacing } from '@/constans'
+import { spacing } from '@/constans'
 import { PAGE_TITLE_MAP } from '@/constans/title'
 import { useFetchProject } from '@/features/Projects/api/fetchProject'
 import { useScreen } from '@/hooks/useScreen'
 import { projectSchema } from '@/lib/http/schema/projectsSchema'
 import { semanticColors } from '@/styles/colors'
-import { HEADINGS, TEXT_TYPE } from '@/styles/typography'
 
 const ProjectPage = memo(function ProjectsPage() {
   const router = useRouter()
@@ -57,6 +55,8 @@ const ProjectPage = memo(function ProjectsPage() {
     projectTime,
     member,
     contents,
+    productDetail,
+    productUrl,
   } = fetchedProject
 
   const BreadcrumbsItems = [
@@ -73,90 +73,49 @@ const ProjectPage = memo(function ProjectsPage() {
     <>
       <Breadcrumbs items={BreadcrumbsItems} />
       <Container size={'md'} px={isTabletScreen ? spacing[0] : spacing[10]}>
-        <Image src={`${path.projectThumbs}/${thumb}`} alt={thumbAlt} />
         <Box
           component="section"
           bg={semanticColors.white}
           py={spacing[8]}
           px={isTabletScreen ? spacing[6] : spacing[10]}
         >
-          <Flex gap={spacing[2]} c={semanticColors.primary} mb={spacing[1]}>
-            <CustomText type={TEXT_TYPE.SUB_HEADLINE}>{productName}</CustomText>
-            <CustomText type={TEXT_TYPE.SUB_HEADLINE}>{taskType}</CustomText>
-          </Flex>
-          <Title order={1} size={HEADINGS.H1} mb={spacing[2]}>
-            {title}
-          </Title>
-          <Space h={spacing[2]} />
-          <Stack spacing={spacing[2]}>
-            <Flex
-              pt={spacing[2]}
-              sx={{ borderTop: `1px solid ${semanticColors.border}` }}
-            >
-              <CustomText
-                w={'15%'}
-                c={semanticColors.base_tirtiary}
-                type={TEXT_TYPE.SUB_HEADLINE}
-              >
-                メンバー
-              </CustomText>
-              <CustomText w={'80%'}>{member}</CustomText>
-            </Flex>
-            <Flex
-              pt={spacing[2]}
-              sx={{ borderTop: `1px solid ${semanticColors.border}` }}
-            >
-              <CustomText
-                w={'15%'}
-                c={semanticColors.base_tirtiary}
-                type={TEXT_TYPE.SUB_HEADLINE}
-              >
-                担当
-              </CustomText>
-              <CustomText w={'80%'}>{role}</CustomText>
-            </Flex>
-            <Flex
-              py={spacing[2]}
-              sx={{
-                borderTop: `1px solid ${semanticColors.border}`,
-                borderBottom: `1px solid ${semanticColors.border}`,
-              }}
-            >
-              <CustomText
-                w={'15%'}
-                c={semanticColors.base_tirtiary}
-                type={TEXT_TYPE.SUB_HEADLINE}
-              >
-                時期
-              </CustomText>
-              <CustomText w={'80%'}>{projectTime}</CustomText>
-            </Flex>
-          </Stack>
+          <AboutProject
+            thumb={thumb}
+            thumbAlt={thumbAlt}
+            title={title}
+            role={role}
+            projectTime={projectTime}
+            member={member}
+            taskType={taskType}
+            productName={productName}
+            productDetail={productDetail}
+            productUrl={productUrl}
+          />
           <Space h={spacing[8]} />
           <Box sx={{ lineHeight: 2 }}>
             <Markdown source={contents} />
           </Box>
-        </Box>
-        <Space h={spacing[8]} />
-        <Stack
-          spacing={isTabletScreen ? spacing[8] : spacing[3]}
-          px={isTabletScreen ? spacing[6] : spacing[0]}
-        >
-          <HorizontalProjectCard id="bizreach" />
-          <HorizontalProjectCard id="bizreach" />
-          <HorizontalProjectCard id="bizreach" />
-        </Stack>
-        <Space h={spacing[8]} />
-        <Flex justify={'center'}>
-          <Button
-            onClick={(e) => {
-              handleClick(e)
-            }}
-            size="md"
+          <Space h={spacing[20]} />
+          <Flex justify={'center'}>
+            <Button
+              onClick={(e) => {
+                handleClick(e)
+              }}
+              size="md"
+            >
+              作品一覧に戻る
+            </Button>
+          </Flex>
+          <Space h={spacing[20]} />
+          <Stack
+            spacing={isTabletScreen ? spacing[8] : spacing[4]}
+            px={isTabletScreen ? spacing[6] : spacing[0]}
           >
-            作品一覧に戻る
-          </Button>
-        </Flex>
+            <HorizontalProjectCard id="bizreach" />
+            <HorizontalProjectCard id="bizreach" />
+            <HorizontalProjectCard id="bizreach" />
+          </Stack>
+        </Box>
       </Container>
     </>
   )
