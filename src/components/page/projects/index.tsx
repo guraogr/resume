@@ -1,8 +1,11 @@
-import { Loader, Box, Title, Tabs, Grid } from '@mantine/core'
+import { Loader, Box, Tabs, Grid, Title, Container } from '@mantine/core'
 import { memo } from 'react'
 
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { ProjectCard } from '@/components/ui/ProjectCard.tsx'
+import CustomText from '@/components/ui/Text'
 import { spacing } from '@/constans'
+import { PAGE_TITLE_MAP } from '@/constans/title'
 import { useFetchProjects } from '@/features/Projects/api/fetchProjects'
 import { useScreen } from '@/hooks/useScreen'
 import { fetchProjectsSchema } from '@/lib/http/schema/projectsSchema'
@@ -12,13 +15,16 @@ import { HEADINGS } from '@/styles/typography'
 const ProjectsPage = memo(function ProjectsPage() {
   const { data, isLoading, isError } = useFetchProjects()
   const { isTabletScreen, isSmartPhoneScreen } = useScreen()
-  if (isLoading) {
-    return <Loader></Loader>
-  }
+  const breadcrumsItems = [
+    {
+      label: PAGE_TITLE_MAP.PROJECTS,
+    },
+  ]
+
   if (isError) {
     throw new Error('問題が発生しました')
   }
-  const fetchedProjects = fetchProjectsSchema.parse(data).contents
+
   const setColumn = (): number => {
     if (isSmartPhoneScreen) {
       return 1
@@ -30,12 +36,37 @@ const ProjectsPage = memo(function ProjectsPage() {
   }
   return (
     <>
-      <Box component="section">
-        <Title order={1} size={HEADINGS.H1} mb={spacing[8]}>
-          参画プロジェクト
-        </Title>
+      <Breadcrumbs items={breadcrumsItems} />
+      <Box py={spacing[20]}>
+        <Container
+          size={'lg'}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <CustomText c={'primary'} fw={'bold'}>
+            Assigned Projects
+          </CustomText>
+          <Title
+            order={1}
+            size={HEADINGS.H1}
+            pt={spacing[2]}
+            mb={spacing[8]}
+            sx={{ textShadow: '1px 1px 10px rgba(0,0,0,.1)' }}
+          >
+            {PAGE_TITLE_MAP.PROJECTS}
+          </Title>
+          <CustomText>
+            私は事業作りを軸とした広義なデザインを意識しており、「世の中に品質の高い価値をいち早く届ける」ことが事業推進にインパクトのあることだと考えています。
+          </CustomText>
+        </Container>
+      </Box>
+      <Container size={'lg'} py={spacing[10]}>
         <Tabs
-          defaultValue="popular"
+          defaultValue="product_design"
           styles={{
             tab: {
               fontWeight: 'bold',
@@ -46,34 +77,43 @@ const ProjectsPage = memo(function ProjectsPage() {
           }}
         >
           <Tabs.List mb={spacing[6]} grow>
-            <Tabs.Tab value="popular">代表的なプロジェクト</Tabs.Tab>
             <Tabs.Tab value="product_design">プロダクトデザイン</Tabs.Tab>
             <Tabs.Tab value="communication_design">
               コミュニケーションデザイン
             </Tabs.Tab>
             <Tabs.Tab value="hobby">趣味制作</Tabs.Tab>
           </Tabs.List>
-          <Tabs.Panel value="popular" pt={spacing[4]}>
-            <Grid columns={setColumn()} gutter={spacing[8]}>
-              {fetchedProjects.map((project, key) => (
-                <Grid.Col key={key} span={1}>
-                  <ProjectCard
-                    id={project.id}
-                    thumb={project.thumb}
-                    thumbAlt={project.thumbAlt}
-                    productName={project.productName}
-                    taskType={project.taskType}
-                    title={project.title}
-                    desc={project.desc}
-                    role={project.role}
-                    projectTime={project.projectTime}
-                  />
-                </Grid.Col>
-              ))}
-            </Grid>
-          </Tabs.Panel>
+          {isLoading ? (
+            <Loader></Loader>
+          ) : (
+            <Tabs.Panel value="product_design" pt={spacing[4]}>
+              <Grid columns={setColumn()} gutter={spacing[8]}>
+                {fetchProjectsSchema
+                  .parse(data)
+                  .contents.map((project, key) => (
+                    <>
+                      {project.category[0] === 'product_design' && (
+                        <Grid.Col key={key} span={1}>
+                          <ProjectCard
+                            id={project.id}
+                            thumb={project.thumb}
+                            thumbAlt={project.thumbAlt}
+                            productName={project.productName}
+                            taskType={project.taskType}
+                            title={project.title}
+                            desc={project.desc}
+                            role={project.role}
+                            projectTime={project.projectTime}
+                          />
+                        </Grid.Col>
+                      )}
+                    </>
+                  ))}
+              </Grid>
+            </Tabs.Panel>
+          )}
         </Tabs>
-      </Box>
+      </Container>
     </>
   )
 })

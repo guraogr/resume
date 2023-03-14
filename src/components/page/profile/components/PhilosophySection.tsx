@@ -1,44 +1,103 @@
-import { Box, Title, Flex, List, Space, Text, Container } from '@mantine/core'
+import { Container, Grid } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
-import { ListItem } from './ui/ListItem'
 
+import CustomText from '@/components/ui/Text'
 import { TextCard } from '@/components/ui/TextCard'
 import { spacing } from '@/constans'
-import { myFeatures, mySkills } from '@/constans/profile'
 import { useScreen } from '@/hooks/useScreen'
 import { ProfilePageLayout } from '@/layouts/ProfilePageLayout'
 import { semanticColors } from '@/styles/colors'
-import { HEADINGS } from '@/styles/typography'
 
 const PhilosophySection: React.FC = memo(function PhilosophySection() {
-  const { styles, isTabletScreen } = useScreen()
+  const { isTabletScreen } = useScreen()
   return (
-    <ProfilePageLayout bg={semanticColors.white}>
+    <ProfilePageLayout bg={semanticColors.white} pt={spacing[6]}>
       <Container size={'lg'} m={'auto'}>
-        <Heading subTitle="フィロソフィー" mb={spacing[10]}>
-          私がデザインエンジニアとして大切にするのは、
-          {!isTabletScreen && <br />}
-          コラボレーションによる事業の推進です
+        {/* <Heading subTitle="仕事の目的" mb={spacing[10]}>
+          夢中になって生きる人を増やす
         </Heading>
-        <Flex gap={spacing[3]} mb={spacing[9]} direction={styles.direction}>
-          <TextCard>徹底した顧客理解</TextCard>
-          <TextCard>正しい人を巻き込む</TextCard>
-          <TextCard>橋渡しになる</TextCard>
-          <TextCard>一緒に進める</TextCard>
-        </Flex>
-        <Text component={'p'} mb={spacing[4]}>
-          私は事業作りを軸とした広義なデザインを意識しており、「世の中に品質の高い価値をいち早く届ける」ことが事業推進にインパクトのあることだと考えています。
-        </Text>
         <Text>
+          わたしの価値は、働く人の日々の負をITの力によって減少させ、やりたいことに対して夢中になれる状態を作っていくことです。
+          <br />
+          仕事であれ、スポーツであれ、勉学であれ、誰もがやりたいことに夢中になれる。結果を残せる。自信がみなぎる。そして、日々の幸せを自覚する。
+          <br />
+          その価値を提供するのが私の仕事だと考えています。
+        </Text>
+
+        <Space h={spacing[16]} />
+        <Box component="section">
+          <Heading subTitle="" mb={spacing[10]}>
+            価値観
+          </Heading>
+          <Grid mb={spacing[9]} columns={isTabletScreen ? 1 : 2}>
+            {myValues.map((value, key) => (
+              <Grid.Col span={1} key={key}>
+                <TextCard>{value.title}</TextCard>
+              </Grid.Col>
+            ))}
+          </Grid>
+        </Box>
+        <Space h={spacing[16]} />
+        <Box component="section">
+          <Heading subTitle="" mb={spacing[10]}>
+            得意なこと
+          </Heading>
+          <Grid mb={spacing[9]} columns={isTabletScreen ? 1 : 2}>
+            {strongPoints.map((stringPoint, key) => (
+              <Grid.Col span={1} key={key}>
+                <TextCard>{stringPoint.title}</TextCard>
+              </Grid.Col>
+            ))}
+          </Grid>
+        </Box>
+        <Space h={spacing[16]} /> */}
+        {/* <Box component="section">
+          <Heading subTitle="" mb={spacing[10]}>
+            好きなこと
+          </Heading>
+          <Grid mb={spacing[9]} columns={isTabletScreen ? 1 : 2}>
+            {favorites.map((favorite, key) => (
+              <Grid.Col span={1} key={key}>
+                <TextCard>{favorite.title}</TextCard>
+              </Grid.Col>
+            ))}
+          </Grid>
+        </Box> */}
+        <Heading subTitle="フィロソフィー" mb={spacing[10]}>
+          目の前のことに夢中になれる人を増やす
+          {!isTabletScreen && <br />}
+          それが私の働く目的です
+        </Heading>
+        <Grid mb={spacing[9]} columns={isTabletScreen ? 1 : 5}>
+          <Grid.Col span={1}>
+            <TextCard>個性</TextCard>
+          </Grid.Col>
+          <Grid.Col span={1}>
+            <TextCard>特別</TextCard>
+          </Grid.Col>
+          <Grid.Col span={1}>
+            <TextCard>夢中</TextCard>
+          </Grid.Col>
+          <Grid.Col span={1}>
+            <TextCard>結果</TextCard>
+          </Grid.Col>
+          <Grid.Col span={1}>
+            <TextCard>自信</TextCard>
+          </Grid.Col>
+        </Grid>
+        <CustomText mb={spacing[4]}>
+          私は事業作りを軸とした広義なデザインを意識しており、「世の中に品質の高い価値をいち早く届ける」ことが事業推進にインパクトのあることだと考えています。
+        </CustomText>
+        <CustomText>
           その上で、直近では開発に領域を広げてデザインと開発をシームレスに繋げる存在になりたいと思っています。
           <br />
           本質的な価値を創出するには必要な人たちを正しく巻き込み・コラボレーションすることが必要不可欠なのに対し、現状は業務として地続きなのに両方を高い次元で業務できる人が世の中にまだ少ないからです。
           <br />
           だからこそ、複数の領域を横断し、他職種とのコラボレーションを通じて事業を推進していくことが私が果たすべき仕事だと考えています。
-        </Text>
-        <Space h={spacing[16]} />
+        </CustomText>
+        {/* <Space h={spacing[16]} />
         <Box component="section">
           <Title size={HEADINGS.H2} order={2} mb={spacing[8]}>
             マイクレド
@@ -55,8 +114,8 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
               </ListItem>
             ))}
           </List>
-        </Box>
-        <Space h={spacing[16]} />
+        </Box> */}
+        {/* <Space h={spacing[16]} />
         <Box component="section">
           <Title size={HEADINGS.H2} order={2} mb={spacing[8]}>
             スキルセット
@@ -75,7 +134,7 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
               </ListItem>
             ))}
           </List>
-        </Box>
+        </Box> */}
       </Container>
     </ProfilePageLayout>
   )

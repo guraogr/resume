@@ -1,19 +1,22 @@
 import {
   Header as MantineHeader,
-  Text,
   Flex,
   Burger,
   Box,
   List,
   Divider,
+  useMantineTheme,
 } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import Link from 'next/link'
-import { memo, useState } from 'react'
+import { memo } from 'react'
 
-import { spacing } from '@/constans'
+import CustomText from '../Text'
+
+import { APP_NAME, spacing } from '@/constans'
 import { useScreen } from '@/hooks/useScreen'
 import { semanticColors } from '@/styles/colors'
+import { shadow } from '@/styles/shadow'
 
 export interface Links {
   link: string
@@ -26,9 +29,7 @@ export interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = memo(function Header({ links }) {
   const [opened, { toggle }] = useDisclosure(false)
-  const [active, setActive] = useState<string>(links[0]?.link ?? '')
-  // TODO: 1回目プロジェクトを押しても効かない
-  // console.log(active)
+  const theme = useMantineTheme()
   const { isTabletScreen } = useScreen()
   const items = links.map((link, key) => (
     <List.Item
@@ -40,20 +41,13 @@ export const Header: React.FC<HeaderProps> = memo(function Header({ links }) {
     >
       <Link
         href={link.link}
-        onClick={() => {
-          setActive(link.link)
-        }}
         style={{
+          color: semanticColors.base_secondary,
           padding: spacing[4],
           width: isTabletScreen ? '90%' : 'auto',
           display: 'flex',
-          fontWeight: 'bold',
           alignItems: 'center',
           textDecoration: 'none',
-          color:
-            active === link.link
-              ? semanticColors.primary
-              : semanticColors.base_tirtiary,
         }}
       >
         {link.label}
@@ -67,8 +61,11 @@ export const Header: React.FC<HeaderProps> = memo(function Header({ links }) {
   return (
     <MantineHeader
       height={56}
+      bg={theme.white}
+      fw={'bold'}
       sx={{
         position: 'relative',
+        borderWidth: isTabletScreen ? 1 : 'none',
       }}
     >
       <Flex
@@ -78,9 +75,11 @@ export const Header: React.FC<HeaderProps> = memo(function Header({ links }) {
         w="95%"
         m="auto"
       >
-        <Text size={'lg'} fw={'bold'}>
-          Ogura&apos;s Portfolio
-        </Text>
+        <CustomText c={'primary'} display={'flex'}>
+          <Link href="/" style={{ fontSize: 16 }}>
+            {APP_NAME}
+          </Link>
+        </CustomText>
         {!isTabletScreen && (
           <Box component="nav">
             <List display={'flex'}>{items}</List>
@@ -94,8 +93,14 @@ export const Header: React.FC<HeaderProps> = memo(function Header({ links }) {
         <Box>
           <Box
             component="nav"
-            bg={semanticColors.white}
-            sx={{ position: 'absolute', left: 0, right: 0, top: 57 }}
+            bg={theme.white}
+            sx={{
+              position: 'absolute',
+              left: 0,
+              right: 0,
+              top: 57,
+              boxShadow: shadow.normal,
+            }}
           >
             <List
               styles={{

@@ -4,9 +4,17 @@ import HistorySection from './components/HistorySection'
 import PhilosophySection from './components/PhilosophySection'
 import ProfileSection from './components/ProfileSection'
 
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
+
 const ProfilePage = memo(function ProfilePage() {
+  const breadcrumbsItems = [
+    {
+      label: 'プロフィール',
+    },
+  ]
   return (
     <>
+      <Breadcrumbs items={breadcrumbsItems} />
       <ProfileSection />
       <PhilosophySection />
       <HistorySection />

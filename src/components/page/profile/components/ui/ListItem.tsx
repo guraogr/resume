@@ -2,15 +2,16 @@ import { Flex, List, Title, type ListItemProps } from '@mantine/core'
 import { memo, type PropsWithChildren } from 'react'
 
 import { Tag } from '@/components/ui/Tag'
-import Text from '@/components/ui/Text'
+import CustomText from '@/components/ui/Text'
 import { TextBox } from '@/components/ui/TextBox'
 import { spacing } from '@/constans'
 import { HEADINGS } from '@/styles/typography'
 
-interface Props extends ListItemProps {
+interface Props extends Omit<ListItemProps, 'children'> {
   title: string
   label?: string
   textBox?: string
+  children?: React.ReactNode
 }
 
 export const ListItem: React.FC<PropsWithChildren<Props>> = memo(
@@ -23,7 +24,7 @@ export const ListItem: React.FC<PropsWithChildren<Props>> = memo(
           </Title>
           {label !== undefined && <Tag label={label} />}
         </Flex>
-        <Text>{children}</Text>
+        <CustomText>{children}</CustomText>
         {textBox !== undefined && <TextBox mt={spacing[4]}>{textBox}</TextBox>}
       </List.Item>
     )

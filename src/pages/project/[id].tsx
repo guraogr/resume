@@ -4,7 +4,7 @@ import { type GetStaticProps, type GetStaticPaths } from 'next'
 import ProjectPage from '@/components/page/project'
 import { Footer } from '@/components/ui/Footer'
 import { Header } from '@/components/ui/Header'
-import { grobalNavigationLinks } from '@/constans'
+import { grobalNavigationLinks, spacing } from '@/constans'
 import { PAGE_TITLE_MAP } from '@/constans/title'
 import { Head } from '@/features/Misc/Head'
 import { fetchProject } from '@/features/Projects/api/fetchProject'
@@ -20,7 +20,7 @@ const Project: React.FC = () => {
         type="website"
       />
       <Header links={grobalNavigationLinks} />
-      <DefaultLayout>
+      <DefaultLayout px={spacing[0]}>
         <ProjectPage />
       </DefaultLayout>
       <Footer links={grobalNavigationLinks} />

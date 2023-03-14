@@ -4,13 +4,13 @@ import { memo, type PropsWithChildren } from 'react'
 import { spacing } from '@/constans'
 
 interface Props extends BoxProps {
-  bg: string
+  bg?: string
 }
 
 export const ProfilePageLayout: React.FC<PropsWithChildren<Props>> = memo(
-  function ProfilePageLayout({ bg, children }) {
+  function ProfilePageLayout({ bg, children, ...props }) {
     return (
-      <Box component={'section'} bg={bg} py={spacing[14]}>
+      <Box component={'section'} bg={bg} py={spacing[24]} {...props}>
         {children}
       </Box>
     )

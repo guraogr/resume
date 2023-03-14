@@ -8,16 +8,13 @@ import { Header } from '@/components/ui/Header'
 import { grobalNavigationLinks } from '@/constans'
 import { PAGE_TITLE_MAP } from '@/constans/title'
 import { Head } from '@/features/Misc/Head'
-import {
-  fetchProjects,
-  useFetchProjects,
-} from '@/features/Projects/api/fetchProjects'
+import { fetchProjects } from '@/features/Projects/api/fetchProjects'
 import { DefaultLayout } from '@/layouts/Default'
 import { clientEnv } from 'env/validators'
 
 const Projects: React.FC = () => {
-  const { data } = useFetchProjects()
-  console.log(data)
+  // const { data } = useFetchProjects()
+  // console.log(data)
   return (
     <>
       <Head
@@ -26,6 +23,7 @@ const Projects: React.FC = () => {
         type="website"
       />
       <Header links={grobalNavigationLinks} />
+
       <DefaultLayout>
         <ProjectsPage />
       </DefaultLayout>

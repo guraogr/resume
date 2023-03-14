@@ -1,7 +1,7 @@
 import { Box, Image, type FlexProps } from '@mantine/core'
 import { memo, type PropsWithChildren } from 'react'
 
-import Text from '@/components/ui/Text'
+import CustomText from '@/components/ui/Text'
 import { path, spacing } from '@/constans'
 import { semanticColors } from '@/styles/colors'
 import { TEXT_TYPE } from '@/styles/typography'
@@ -41,10 +41,10 @@ export const CompanyCard: React.FC<PropsWithChildren<Props>> = memo(
           alt={logoAlt}
         />
         <Box>
-          <Text type={TEXT_TYPE.SUB_HEADLINE}>{companyName}</Text>
-          <Text>{job}</Text>
-          <Text mb={spacing[2]}>{workedTime}</Text>
-          <Text c={semanticColors.base_tirtiary}>{children}</Text>
+          <CustomText type={TEXT_TYPE.SUB_HEADLINE}>{companyName}</CustomText>
+          <CustomText>{job}</CustomText>
+          <CustomText mb={spacing[2]}>{workedTime}</CustomText>
+          <CustomText c={semanticColors.base_tirtiary}>{children}</CustomText>
         </Box>
       </Box>
     )

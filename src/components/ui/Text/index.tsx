@@ -13,7 +13,7 @@ interface Props extends TextProps {
   type?: TextType
 }
 
-const Text: React.FC<PropsWithChildren<Props>> = memo(function Text({
+const CustomText: React.FC<PropsWithChildren<Props>> = memo(function Text({
   type = 'body',
   children,
   ...args
@@ -44,4 +44,4 @@ const Text: React.FC<PropsWithChildren<Props>> = memo(function Text({
   )
 })
 
-export default Text
+export default CustomText

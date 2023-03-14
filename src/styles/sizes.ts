@@ -1,4 +1,4 @@
 export const sizes = {
-  sm: 720,
+  md: 840,
   lg: 1140,
 }

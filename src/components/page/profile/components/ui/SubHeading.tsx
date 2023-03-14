@@ -1,7 +1,7 @@
 import { Box, type BoxProps, Title } from '@mantine/core'
 import { memo, type PropsWithChildren } from 'react'
 
-import Text from '@/components/ui/Text'
+import CustomText from '@/components/ui/Text'
 import { spacing } from '@/constans'
 import { TEXT_TYPE, HEADINGS } from '@/styles/typography'
 
@@ -16,7 +16,7 @@ export const SubHeading: React.FC<PropsWithChildren<Props>> = memo(
         <Title size={HEADINGS.H2} order={2} mb={spacing[3]}>
           {children}
         </Title>
-        <Text type={TEXT_TYPE.BODY}>{desc}</Text>
+        <CustomText type={TEXT_TYPE.BODY}>{desc}</CustomText>
       </Box>
     )
   }

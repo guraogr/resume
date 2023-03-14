@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const ProjectSchema = z.object({
+export const projectSchema = z.object({
   thumb: z.string(),
   thumbAlt: z.string(),
   productName: z.string(),
@@ -12,12 +12,13 @@ export const ProjectSchema = z.object({
   member: z.string(),
   contents: z.string(),
   id: z.string(),
+  category: z.string().array(),
 })
 
-export const ProjectsSchema = z.array(ProjectSchema)
+export const projectsSchema = z.array(projectSchema)
 
 export const fetchProjectsSchema = z.object({
-  contents: ProjectsSchema,
+  contents: projectsSchema,
   limit: z.number(),
   offset: z.number(),
   totalCount: z.number(),

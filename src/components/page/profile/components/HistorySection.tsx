@@ -5,6 +5,7 @@ import { Heading } from './ui/Heading'
 import { JobHisotryList } from './ui/JobHistoryList'
 import { SubHeading } from './ui/SubHeading'
 
+import CustomText from '@/components/ui/Text'
 import { spacing } from '@/constans'
 import { JobType } from '@/constans/http'
 import { useFetchJobHistory } from '@/features/JobHistory/api/fetchJobHistory'
@@ -14,6 +15,7 @@ import { semanticColors } from '@/styles/colors'
 
 const HistorySection: React.FC = memo(function HistorySection() {
   const { data, isLoading, isError } = useFetchJobHistory()
+
   if (isLoading) {
     return <></>
   }
@@ -34,36 +36,30 @@ const HistorySection: React.FC = memo(function HistorySection() {
   return (
     <ProfilePageLayout bg={semanticColors.bg}>
       <Container size={'lg'} m={'auto'}>
-        <Heading subTitle="フィロソフィー" mb={spacing[10]}>
-          私がデザインエンジニアとして大切にするのは、
-          <br />
-          コラボレーションによる事業の推進です
+        <Heading subTitle="業務経歴" mb={spacing[10]}>
+          今までの職歴
         </Heading>
+        <CustomText>
+          事業成長に対してインパクトのある役割を担いたいというWillがあり、開発とデザインの経験をもとに事業をリードできる状態を中期目標として幅広い業務に取り組んでいます。
+          それらの経験をもとにプロダクト全体を推進する力を長期的に身につけていきたいと考えています。
+        </CustomText>
+        <Space h={spacing[16]} />
         <Box component="section">
-          <SubHeading
-            desc={'事業会社・クライアントワークを双方経験してきました。'}
-            mb={spacing[6]}
-          >
+          <SubHeading desc={''} mb={spacing[6]}>
             正社員
           </SubHeading>
           <JobHisotryList histories={fulltimeJobHistory} />
         </Box>
         <Space h={spacing[16]} />
         <Box component="section">
-          <SubHeading
-            desc={'事業会社・クライアントワークを双方経験してきました。'}
-            mb={spacing[6]}
-          >
+          <SubHeading desc={''} mb={spacing[6]}>
             業務委託
           </SubHeading>
           <JobHisotryList histories={partimeJobHistory} />
         </Box>
         <Space h={spacing[16]} />
         <Box component="section">
-          <SubHeading
-            desc={'事業会社・クライアントワークを双方経験してきました。'}
-            mb={spacing[6]}
-          >
+          <SubHeading desc={''} mb={spacing[6]}>
             インターン・アルバイト
           </SubHeading>
           <JobHisotryList histories={internHistory} />

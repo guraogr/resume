@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import Text from '@/components/ui/Text'
+import CustomText from '@/components/ui/Text'
 import { spacing } from '@/constans'
 import { semanticColors } from '@/styles/colors'
 
@@ -10,7 +10,7 @@ interface Props {
 
 export const Tag: React.FC<Props> = memo(function Tag({ label, ...args }) {
   return (
-    <Text
+    <CustomText
       color={semanticColors.primary}
       fw={'bold'}
       bg={semanticColors.primaryPale}
@@ -20,6 +20,6 @@ export const Tag: React.FC<Props> = memo(function Tag({ label, ...args }) {
       {...args}
     >
       {label}
-    </Text>
+    </CustomText>
   )
 })

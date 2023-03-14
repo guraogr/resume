@@ -112,3 +112,8 @@ ol {
     color-scheme: dark;
   }
 }
+
+button[data-active='true'] {
+  background-color: #273e74 !important;
+  color: white !important;
+}

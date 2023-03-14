@@ -12,16 +12,16 @@ type ThemeColor = [
 ]
 
 export const primary: ThemeColor = [
-  '#E8F2F1',
-  '#D5E8E6',
-  '#AFD2CE',
-  '#8ABDB7',
-  '#64A79F',
-  '#3E9288',
-  '#32756D',
-  '#255852',
-  '#193A36',
-  '#132C29',
+  '#F8F9FA',
+  '#B1BCD7',
+  '#9FACCB',
+  '#8E9CBE',
+  '#6C7DA6',
+  '#495D8D',
+  '#273E74',
+  '#1F325D',
+  '#172546',
+  '#10192E',
 ]
 export const grayAlpha: ThemeColor = [
   '#EEEEEE',
@@ -49,7 +49,7 @@ export const blueGray: ThemeColor = [
 ]
 
 export const semanticColors = {
-  primary: primary[5],
+  primary: primary[6],
   primaryPale: primary[0],
   gray: grayAlpha[2],
   icon: grayAlpha[7],
