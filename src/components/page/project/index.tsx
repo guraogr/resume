@@ -98,7 +98,7 @@ const ProjectPage = memo(function ProjectsPage() {
           <Space h={spacing[20]} />
           <Flex justify={'center'}>
             <Button
-              onClick={(e) => {
+              onClick={(e: any) => {
                 handleClick(e)
               }}
               size="md"
