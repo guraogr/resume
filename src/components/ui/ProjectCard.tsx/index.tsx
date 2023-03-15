@@ -40,11 +40,15 @@ export const ProjectCard: React.FC<Props> = memo(function ProjectCard({
         }}
       >
         <Card.Section>
-          <Image src={`${path.projectThumbs}/${thumb}`} alt={thumbAlt} />
+          <Image
+            height={190}
+            src={`${path.projectThumbs}/${thumb}`}
+            alt={thumbAlt}
+          />
         </Card.Section>
         <Box px={spacing[2]} py={spacing[4]}>
           <Flex gap={spacing[2]} c={semanticColors.primary} mb={spacing[1]}>
-            <CustomText type={TEXT_TYPE.SUB_HEADLINE}>{taskType}</CustomText>
+            <CustomText type={TEXT_TYPE.CAPTION2}>{taskType}</CustomText>
           </Flex>
           <Title order={1} size={HEADINGS.H3} mb={spacing[2]}>
             {title}

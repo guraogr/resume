@@ -1,31 +1,19 @@
-import { Container, Grid } from '@mantine/core'
+import { Box, Container, Space, Title } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
 
 import CustomText from '@/components/ui/Text'
-import { TextCard } from '@/components/ui/TextCard'
 import { spacing } from '@/constans'
-import { useScreen } from '@/hooks/useScreen'
 import { ProfilePageLayout } from '@/layouts/ProfilePageLayout'
 import { semanticColors } from '@/styles/colors'
+import { HEADINGS } from '@/styles/typography'
 
 const PhilosophySection: React.FC = memo(function PhilosophySection() {
-  const { isTabletScreen } = useScreen()
   return (
     <ProfilePageLayout bg={semanticColors.white} pt={spacing[6]}>
       <Container size={'lg'} m={'auto'}>
-        {/* <Heading subTitle="仕事の目的" mb={spacing[10]}>
-          夢中になって生きる人を増やす
-        </Heading>
-        <Text>
-          わたしの価値は、働く人の日々の負をITの力によって減少させ、やりたいことに対して夢中になれる状態を作っていくことです。
-          <br />
-          仕事であれ、スポーツであれ、勉学であれ、誰もがやりたいことに夢中になれる。結果を残せる。自信がみなぎる。そして、日々の幸せを自覚する。
-          <br />
-          その価値を提供するのが私の仕事だと考えています。
-        </Text>
-
+        {/*
         <Space h={spacing[16]} />
         <Box component="section">
           <Heading subTitle="" mb={spacing[10]}>
@@ -65,12 +53,12 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
             ))}
           </Grid>
         </Box> */}
-        <Heading subTitle="フィロソフィー" mb={spacing[10]}>
-          目の前のことに夢中になれる人を増やす
-          {!isTabletScreen && <br />}
-          それが私の働く目的です
+        <Heading subTitle="大切な価値観" mb={spacing[10]}>
+          目の前のことに夢中になって楽しめる人を増やしたい
+          {/* {!isTabletScreen && <br />}
+          それが私の働く目的です */}
         </Heading>
-        <Grid mb={spacing[9]} columns={isTabletScreen ? 1 : 5}>
+        {/* <Grid mb={spacing[9]} columns={isTabletScreen ? 1 : 5}>
           <Grid.Col span={1}>
             <TextCard>個性</TextCard>
           </Grid.Col>
@@ -86,17 +74,40 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
           <Grid.Col span={1}>
             <TextCard>自信</TextCard>
           </Grid.Col>
-        </Grid>
-        <CustomText mb={spacing[4]}>
-          私は事業作りを軸とした広義なデザインを意識しており、「世の中に品質の高い価値をいち早く届ける」ことが事業推進にインパクトのあることだと考えています。
-        </CustomText>
-        <CustomText>
-          その上で、直近では開発に領域を広げてデザインと開発をシームレスに繋げる存在になりたいと思っています。
-          <br />
-          本質的な価値を創出するには必要な人たちを正しく巻き込み・コラボレーションすることが必要不可欠なのに対し、現状は業務として地続きなのに両方を高い次元で業務できる人が世の中にまだ少ないからです。
-          <br />
-          だからこそ、複数の領域を横断し、他職種とのコラボレーションを通じて事業を推進していくことが私が果たすべき仕事だと考えています。
-        </CustomText>
+        </Grid> */}
+        <Box>
+          <Title size={HEADINGS.H3} order={3} mb={spacing[2]}>
+            1. What(何をしたいか)
+          </Title>
+          <CustomText mb={spacing[4]} sx={{ lineHeight: 2 }}>
+            自分にとって仕事は「人生を豊かにしてくれるもの」であり、自分にとって幸せは「目の前のことに夢中になって楽しめる」ことだと思っています。
+            <br />
+            子供の頃から活き活きと働いている大人を見たことがなく、社会人になってから毎日が楽しいと思えなくなっている人たちを見てきて、それが当たり前とされる社会がおかしいと昔から感じていました。
+            <br />
+            仕事と人を上手く調和させることで人の幸せに貢献していきたいという根源的な欲求があります。
+          </CustomText>
+          <Space h={spacing[4]} />
+          <Title size={HEADINGS.H3} order={3} mb={spacing[2]}>
+            2. Who(誰としたいか)
+          </Title>
+          <CustomText mb={spacing[4]} sx={{ lineHeight: 2 }}>
+            信頼できる仲間と一緒に過程を楽しみたい。
+            <br />
+            自分と同じ熱い気持ちを持ち、愛情を持って一人一人に向き合うことができる。
+            そんな熱くて人間味のある人たちと働きたいと思っています。
+          </CustomText>
+          <Space h={spacing[4]} />
+          <Title size={HEADINGS.H3} order={3} mb={spacing[2]}>
+            3. How(どういう風にしたいか)
+          </Title>
+          <CustomText mb={spacing[4]} sx={{ lineHeight: 2 }}>
+            毎日が部活動のような、信頼できる仲間と熱中しながら大きな目標に向かいたい。
+            <br />
+            今までは、良いキャリアを積みたい、賞を取りたい、年収を上げたいなど常に自分自身のこうなりたいという結果しか見ていませんでした。
+            <br />
+            しかし、自分の幸福とは努力が実った先よりも実るまでの努力している時が一番楽しいのだと気づき、目標という結果に向かって熱中する過程を楽しみたいと考えるようになりました。
+          </CustomText>
+        </Box>
         {/* <Space h={spacing[16]} />
         <Box component="section">
           <Title size={HEADINGS.H2} order={2} mb={spacing[8]}>

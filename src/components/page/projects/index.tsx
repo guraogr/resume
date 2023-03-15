@@ -1,4 +1,5 @@
 import { Loader, Box, Tabs, Grid, Title, Container } from '@mantine/core'
+import Link from 'next/link'
 import { memo } from 'react'
 
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
@@ -15,12 +16,7 @@ import { HEADINGS } from '@/styles/typography'
 const ProjectsPage = memo(function ProjectsPage() {
   const { data, isLoading, isError } = useFetchProjects()
   const { isTabletScreen, isSmartPhoneScreen } = useScreen()
-  const workCategory = [
-    'product_design',
-    'communication_design',
-    'hobby',
-    'article',
-  ]
+  const workCategory = ['product_design', 'communication_design', 'hobby']
 
   const breadcrumsItems = [
     {
@@ -66,8 +62,26 @@ const ProjectsPage = memo(function ProjectsPage() {
           >
             {PAGE_TITLE_MAP.PROJECTS}
           </Title>
-          <CustomText>
-            私は事業作りを軸とした広義なデザインを意識しており、「世の中に品質の高い価値をいち早く届ける」ことが事業推進にインパクトのあることだと考えています。
+          <CustomText ta={'center'}>
+            アウトプットとして見せられるデザインプロジェクトのみを載せています。
+            <br />
+            この他の業務について知りたい場合は
+            <Link
+              color="primary"
+              style={{ borderBottom: `1px solid ${semanticColors.primary}` }}
+              href="/"
+            >
+              職務経歴書
+            </Link>
+            や
+            <Link
+              color="primary"
+              style={{ borderBottom: `1px solid ${semanticColors.primary}` }}
+              href="/"
+            >
+              プロフィールページ
+            </Link>
+            を参考にしてください。
           </CustomText>
         </Container>
       </Box>
@@ -89,7 +103,6 @@ const ProjectsPage = memo(function ProjectsPage() {
               コミュニケーションデザイン
             </Tabs.Tab>
             <Tabs.Tab value={workCategory[2]}>趣味制作</Tabs.Tab>
-            <Tabs.Tab value={workCategory[3]}>執筆記事</Tabs.Tab>
           </Tabs.List>
           {isLoading ? (
             <Loader></Loader>

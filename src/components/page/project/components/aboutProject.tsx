@@ -138,7 +138,7 @@ const AboutProject: React.FC<Props> = memo(function AboutProject(props) {
                     borderBottom: `1px solid ${semanticColors.primary}`,
                   }}
                 >
-                  公式サイトはこちら
+                  サイトはこちら
                 </a>
               )}
             </Box>

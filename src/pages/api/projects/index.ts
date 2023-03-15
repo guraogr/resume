@@ -8,6 +8,7 @@ const getProjects = async (
 ): Promise<void> => {
   const response = await microCmsClient.get({
     endpoint: 'projects',
+    queries: { limit: 99 },
   })
   res.status(200).json(response)
 }
