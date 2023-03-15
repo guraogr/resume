@@ -119,11 +119,12 @@ const ProjectsPage = memo(function ProjectsPage() {
                                 thumbAlt={project.thumbAlt}
                                 productName={project.productName}
                                 taskType={project.taskType}
-                                title={project.title}
                                 desc={project.desc}
                                 role={project.role}
                                 projectTime={project.projectTime}
-                              />
+                              >
+                                {project.title}
+                              </ProjectCard>
                             </Grid.Col>
                           )}
                         </>

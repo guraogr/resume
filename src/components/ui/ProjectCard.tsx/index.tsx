@@ -1,6 +1,6 @@
-import { Card, Image, Flex, Title, Box } from '@mantine/core'
+import { Card, Image, Flex, Title, Box, type CardProps } from '@mantine/core'
 import Link from 'next/link'
-import { memo } from 'react'
+import React, { memo } from 'react'
 
 import CustomText from '@/components/ui/Text'
 import { path, spacing } from '@/constans'
@@ -9,7 +9,11 @@ import { semanticColors } from '@/styles/colors'
 import { shadow } from '@/styles/shadow'
 import { HEADINGS, TEXT_TYPE } from '@/styles/typography'
 
-type Props = Omit<Project, 'member' | 'contents' | 'category' | 'productDetail'>
+type Props = Omit<
+  Project,
+  'member' | 'contents' | 'category' | 'productDetail' | 'title'
+> &
+  CardProps
 
 export const ProjectCard: React.FC<Props> = memo(function ProjectCard({
   id,
@@ -17,10 +21,10 @@ export const ProjectCard: React.FC<Props> = memo(function ProjectCard({
   thumbAlt,
   productName,
   taskType,
-  title,
   desc,
   role,
   projectTime,
+  children,
   ...args
 }) {
   return (
@@ -51,7 +55,7 @@ export const ProjectCard: React.FC<Props> = memo(function ProjectCard({
             <CustomText type={TEXT_TYPE.CAPTION2}>{taskType}</CustomText>
           </Flex>
           <Title order={1} size={HEADINGS.H3} mb={spacing[2]}>
-            {title}
+            {children}
           </Title>
         </Box>
       </Card>
