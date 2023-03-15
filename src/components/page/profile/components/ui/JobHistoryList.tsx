@@ -51,7 +51,7 @@ export const JobHisotryList: React.FC<Props> = memo(function Heading({
         size={'xl'}
         opened={opened}
         onClose={close}
-        title="経験できたこと"
+        title="業務詳細"
         sx={{ zIndex: 10000 }}
       >
         {typeof expContent === 'string' && <Markdown source={expContent} />}
