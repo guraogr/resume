@@ -7,7 +7,7 @@ import { Header } from '@/components/ui/Header'
 import { grobalNavigationLinks } from '@/constans'
 import { PAGE_TITLE_MAP } from '@/constans/title'
 import { fetchJobHistory } from '@/features/JobHistory/api/fetchJobHistory'
-import { Head } from '@/features/Misc/Head'
+import { Head } from '@/features/Misc/Head/index'
 import { type JobHistries } from '@/models/JobHistory'
 import { type GetListRequestQuery } from '@/models/Request'
 import { clientEnv } from 'env/validators'
@@ -17,9 +17,6 @@ interface Props {
 }
 
 const Home: React.FC<Props> = (props) => {
-  // const { data } = useFetchProjects()
-  // console.log(data)
-  // Client側のJS
   return (
     <>
       <Head
