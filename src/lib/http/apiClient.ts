@@ -1,8 +1,7 @@
 import aspida, { type FetchConfig } from '@aspida/fetch'
 import qs from 'qs'
 
-import api from '../../apis/$api'
-
+import api from '@/apis/$api'
 import { clientEnv } from 'env/validators'
 
 const fetchConfig: FetchConfig = {
