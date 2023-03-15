@@ -63,7 +63,7 @@ const ProjectsPage = memo(function ProjectsPage() {
             {PAGE_TITLE_MAP.PROJECTS}
           </Title>
           <CustomText ta={'center'}>
-            アウトプットとして見せられるデザインプロジェクトのみを載せています。
+            アウトプットとして見せられるデザインプロジェクトの一部を載せています。
             <br />
             この他の業務について知りたい場合は
             <Link
@@ -71,17 +71,13 @@ const ProjectsPage = memo(function ProjectsPage() {
               style={{ borderBottom: `1px solid ${semanticColors.primary}` }}
               href="/"
             >
-              職務経歴書
-            </Link>
-            や
-            <Link
-              color="primary"
-              style={{ borderBottom: `1px solid ${semanticColors.primary}` }}
-              href="/"
-            >
-              プロフィールページ
+              プロフィールページの業務経歴
             </Link>
             を参考にしてください。
+          </CustomText>
+          <CustomText color={'red'} mt={spacing[3]} ta={'center'}>
+            ※
+            クローズドな場のみでの公開となるため、取り扱いにはくれぐれもご注意ください。
           </CustomText>
         </Container>
       </Box>

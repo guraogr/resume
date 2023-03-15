@@ -35,7 +35,7 @@ const HistorySection: React.FC = memo(function HistorySection() {
 
   return (
     <ProfilePageLayout bg={semanticColors.bg}>
-      <Container size={'lg'} m={'auto'}>
+      <Container size={'lg'} m={'auto'} id="my_history">
         <Heading subTitle="業務経歴" mb={spacing[10]}>
           今までの職歴
         </Heading>
@@ -61,7 +61,7 @@ const HistorySection: React.FC = memo(function HistorySection() {
         <Space h={spacing[16]} />
         <Box component="section">
           <SubHeading desc={''} mb={spacing[6]}>
-            インターン・アルバイト
+            アルバイト
           </SubHeading>
           <JobHisotryList histories={internHistory} />
         </Box>

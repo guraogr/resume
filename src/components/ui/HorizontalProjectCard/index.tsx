@@ -11,13 +11,25 @@ import { TEXT_TYPE, HEADINGS } from '@/styles/typography'
 
 interface Props {
   id: string
+  thumb: string
+  thumbAlt: string
+  title: string
+  productName: string
+  category: string
 }
 
 export const HorizontalProjectCard: React.FC<Props> = memo(
-  function HorizontalProjectCard({ id }) {
+  function HorizontalProjectCard({
+    id,
+    thumb,
+    thumbAlt,
+    title,
+    productName,
+    category,
+  }) {
     const { styles, isTabletScreen } = useScreen()
     return (
-      <Link href={`project/${id}`}>
+      <Link href={`${id}`}>
         <Box
           component="article"
           display={'flex'}
@@ -37,8 +49,9 @@ export const HorizontalProjectCard: React.FC<Props> = memo(
           bg={semanticColors.white}
         >
           <Image
-            src={`${path.projectThumbs}/campus.png`}
-            alt={'bizreach campus'}
+            src={`${path.projectThumbs}/${thumb}`}
+            alt={thumbAlt}
+            maw={284}
           />
           <Box
             ml={isTabletScreen ? spacing[0] : spacing[5]}
@@ -46,12 +59,12 @@ export const HorizontalProjectCard: React.FC<Props> = memo(
           >
             <Flex gap={spacing[2]} c={semanticColors.primary} mb={spacing[1]}>
               <CustomText type={TEXT_TYPE.SUB_HEADLINE}>
-                BizReach Campus
+                {productName}
               </CustomText>
-              <CustomText type={TEXT_TYPE.SUB_HEADLINE}>UI改善</CustomText>
+              <CustomText type={TEXT_TYPE.SUB_HEADLINE}>{category}</CustomText>
             </Flex>
             <Title order={2} size={HEADINGS.H3} mb={spacing[2]}>
-              デザイン負債を抱えた製品のUI再設計を担当。デザイナー・フロントエンドの橋渡しとなりプロジェクトを推進。
+              {title}
             </Title>
           </Box>
         </Box>
