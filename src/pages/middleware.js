@@ -1,7 +1,6 @@
-import { NextResponse } from 'next/server'
-
-export function middleware(req) {
+export async function middleware(req) {
   const basicAuth = req.headers.get('authorization')
+  const { NextResponse } = await import('next/server')
 
   if (basicAuth) {
     const auth = basicAuth.split(' ')[1]
