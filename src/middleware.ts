@@ -1,10 +1,11 @@
-export async function middleware(req: any) {
+import { type NextRequest, NextResponse } from 'next/server'
+
+export function middleware(req: NextRequest) {
   const basicAuth = req.headers.get('authorization')
 
   if (basicAuth) {
     const auth = basicAuth.split(' ')[1]
     const [user, pwd] = Buffer.from(auth, 'base64').toString().split(':')
-    const { NextResponse } = await import('next/server')
 
     if (
       user === process.env.BASIC_AUTH_USER &&
