@@ -1,4 +1,4 @@
-import { Box, Container, Space } from '@mantine/core'
+import { Box, Container, Loader, Space } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
@@ -17,7 +17,7 @@ const HistorySection: React.FC = memo(function HistorySection() {
   const { data, isLoading, isError } = useFetchJobHistory()
 
   if (isLoading) {
-    return <></>
+    return <Loader />
   }
   if (isError) {
     throw new Error('問題が発生しました')
