@@ -80,7 +80,7 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
             1. What(何をしたいか)
           </Title>
           <CustomText mb={spacing[4]} sx={{ lineHeight: 2 }}>
-            自分にとって仕事は「人生を面白くしてくれるもの」であり、自分にとって幸せは「目の前のことに夢中になって楽しめる」ことです。
+            自分にとって仕事は「人生を面白くしてくれるもの」であり、自分にとって幸福は「目の前のことに夢中になって楽しめる」ことです。
             <br />
             {/* 子供の頃から活き活きと働いている大人を見たことがなく、社会人になってから毎日が楽しいと思えなくなっている人たちを見てきて、それが当たり前とされる社会がに対して違和感を感じていました。
             <br /> */}
@@ -91,19 +91,16 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
             2. Who(誰としたいか)
           </Title>
           <CustomText mb={spacing[4]} sx={{ lineHeight: 2 }}>
-            自分と同じ熱い気持ちを持ち、愛情を持って一人一人に向き合うことができる。
-            <br />
-            そんな熱くて信頼できる仲間と一緒に、大きな目標に向かうまでの過程を楽しみたいと思っています。
+            自分と同じ熱い気持ちを持ち、愛情を持って一人一人に向き合うことができる人たちと過程を楽しむ
           </CustomText>
           <Space h={spacing[4]} />
           <Title size={HEADINGS.H3} order={3} mb={spacing[2]}>
             3. How(どういう風にしたいか)
           </Title>
           <CustomText mb={spacing[4]} sx={{ lineHeight: 2 }}>
-            信頼できる仲間と毎日が部活動のように仕事に熱中したい。
+            信頼できる仲間と部活動のように熱中して働く
             {/* 今までは、良いキャリアを積みたい、賞を取りたい、年収を上げたいなど自分自身のこうなりたいという結果に囚われ、本当に欲しかったものに対して盲目になっていました。 */}
             <br />
-            自分の幸福とは目標という結果に向かって熱中する過程を楽しむことであり、それを信頼できる仲間と歩めることです。
           </CustomText>
         </Box>
         {/* <Space h={spacing[16]} />
