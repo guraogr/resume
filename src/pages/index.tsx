@@ -1,3 +1,4 @@
+import { Box } from '@mantine/core'
 import { QueryClient, dehydrate } from '@tanstack/react-query'
 import { type GetStaticProps } from 'next'
 
@@ -24,9 +25,11 @@ const Home: React.FC<Props> = (props) => {
         pageUrl={clientEnv.NEXT_PUBLIC_APP_URL}
         type="website"
       />
-      <Header links={grobalNavigationLinks} />
-      <ProfilePage />
-      <Footer links={grobalNavigationLinks} />
+      <Box bg={'white'}>
+        <Header links={grobalNavigationLinks} />
+        <ProfilePage />
+        <Footer links={grobalNavigationLinks} />
+      </Box>
     </>
   )
 }

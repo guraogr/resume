@@ -1,4 +1,4 @@
-import { Avatar, Box, Title, Container, Image } from '@mantine/core'
+import { Avatar, Box, Title, Container } from '@mantine/core'
 import { memo } from 'react'
 
 import CustomText from '@/components/ui/Text'
@@ -12,7 +12,11 @@ import { HEADINGS } from '@/styles/typography'
 const ProfileSection: React.FC = memo(function ProfileSection() {
   const { isTabletScreen, styles } = useScreen()
   return (
-    <ProfilePageLayout bg={semanticColors.white} py={spacing[0]}>
+    <ProfilePageLayout
+      bg={semanticColors.white}
+      py={spacing[0]}
+      mb={spacing[20]}
+    >
       <Box
         h={180}
         sx={{
@@ -42,24 +46,38 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
           <Avatar
             src={`${path.images}/Avatar.png`}
             alt="おぐらひろきの自画像イラスト"
-            size={130}
+            size={170}
             mr={isTabletScreen ? spacing[0] : spacing[14]}
             mb={isTabletScreen ? spacing[4] : spacing[0]}
             sx={{
               filter: 'drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.06))',
+              height: 240,
             }}
           ></Avatar>
           <Box ta={isTabletScreen ? 'center' : 'left'}>
-            {/* <CustomText mb={spacing[1]}>デザインエンジニア</CustomText> */}
             <Title mb={spacing[3]} size={HEADINGS.H3} order={1}>
-              初めまして、おぐらひろきです
+              Hiroki Ogura ｜自己紹介
             </Title>
             <CustomText mb={spacing[3]} ta={'left'}>
-              1999年京都府生まれ、ECCコンピュータ専門学校出身。
+              1999年京都府京丹後市出身。2021年3月ECCコンピュータ専門学校マルチメディア研究学科卒業。
               <br />
-              BizReach、YumemiなどのIT企業でデザイナーとしてサービス開発に携わりつつ、個人で数社のスタートアップのデザイン・開発などに幅広く携わって参りました。
+              在学中は、2年間デザイナーとして制作会社・事業会社でインターンを経験後、GovTechスタートアップでUIデザイン業務に従事しつつ、個人でチームを結成して複数のプロダクト作りを行う。
+              <br />
+              <br />
+              2021年4月に株式会社ビズリーチに入社。
+              <br />
+              UI/UXデザイン・クリエイティブ制作業務やフロントエンド開発に従事。
+              <br />
+              個人でも数社のSaaSスタートアップにてデザイン・開発に幅広く携わる。
+              <br />
+              <br />
+              2022年9月 株式会社ゆめみに転職
+              <br />
+              2023年8月 創業前から携わっていた株式会社ノックラーンへ正式に参画。
+              <br />
+              現在は、新規事業の立ち上げに関わる全般の活動に従事。
             </CustomText>
-            <Box
+            {/* <Box
               component="a"
               display={'flex'}
               sx={{ justifyContent: styles.justify }}
@@ -67,7 +85,7 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
               mb={12}
             >
               <Image src={'/images/github.svg'} width={24} alt="github" />
-            </Box>
+            </Box> */}
             {/* <Accordion defaultValue="customization">
               <Accordion.Item value="customization" w={'auto'}>
                 <Accordion.Control>受賞歴</Accordion.Control>

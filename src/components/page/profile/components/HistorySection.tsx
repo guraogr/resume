@@ -1,11 +1,10 @@
-import { Box, Container, Loader, Space } from '@mantine/core'
+import { Box, Container, Flex, Loader, Space } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
 import { JobHisotryList } from './ui/JobHistoryList'
 import { SubHeading } from './ui/SubHeading'
 
-import CustomText from '@/components/ui/Text'
 import { spacing } from '@/constans'
 import { JobType } from '@/constans/http'
 import { useFetchJobHistory } from '@/features/JobHistory/api/fetchJobHistory'
@@ -17,7 +16,11 @@ const HistorySection: React.FC = memo(function HistorySection() {
   const { data, isLoading, isError } = useFetchJobHistory()
 
   if (isLoading) {
-    return <Loader />
+    return (
+      <Flex w={'100%'} display={'flex'} justify={'center'}>
+        <Loader></Loader>
+      </Flex>
+    )
   }
   if (isError) {
     throw new Error('問題が発生しました')
@@ -36,14 +39,14 @@ const HistorySection: React.FC = memo(function HistorySection() {
   return (
     <ProfilePageLayout bg={semanticColors.bg}>
       <Container size={'lg'} m={'auto'} id="my_history">
-        <Heading subTitle="業務経歴" mb={spacing[10]}>
+        <Heading subTitle="業務経歴" mb={spacing[0]}>
           今までの職歴
         </Heading>
-        <CustomText>
+        {/* <CustomText>
           事業成長に対してインパクトのある役割を担いたいというWillがあり、開発とデザインの経験をもとに事業をリードできる状態を中期目標として、幅広い業務に取り組んでいます。
           <br />
           これらの経験をもとにプロダクトの成長を推進する力を長期的に身につけていきたいと考えています。
-        </CustomText>
+        </CustomText> */}
         <Space h={spacing[16]} />
         <Box component="section">
           <SubHeading desc={''} mb={spacing[6]}>

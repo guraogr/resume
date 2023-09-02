@@ -1,5 +1,4 @@
-import { Loader, Box, Tabs, Grid, Title, Container } from '@mantine/core'
-import Link from 'next/link'
+import { Loader, Box, Tabs, Grid, Title, Container, Flex } from '@mantine/core'
 import { memo } from 'react'
 
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
@@ -64,7 +63,7 @@ const ProjectsPage = memo(function ProjectsPage() {
           </Title>
           <CustomText ta={'center'}>
             アウトプットとして見せられるデザインプロジェクトの一部を載せています。
-            <br />
+            {/* <br />
             この他の業務について知りたい場合は
             <Link
               color="primary"
@@ -73,11 +72,13 @@ const ProjectsPage = memo(function ProjectsPage() {
             >
               プロフィールページの業務経歴
             </Link>
-            を参考にしてください。
+            を参考にしてください。 */}
           </CustomText>
           <CustomText color={'red'} mt={spacing[3]} ta={'center'}>
             ※
-            クローズドな場のみでの公開となるため、取り扱いにはくれぐれもご注意ください。
+            採用の場に限り公開となるため、クローズドな場でのみの閲覧でお願いいたします。
+            <br />
+            外部公開はお控えください。
           </CustomText>
         </Container>
       </Box>
@@ -101,7 +102,9 @@ const ProjectsPage = memo(function ProjectsPage() {
             <Tabs.Tab value={workCategory[2]}>趣味制作</Tabs.Tab>
           </Tabs.List>
           {isLoading ? (
-            <Loader></Loader>
+            <Flex w={'100%'} display={'flex'} justify={'center'}>
+              <Loader></Loader>
+            </Flex>
           ) : (
             <>
               {workCategory.map((category, key) => (

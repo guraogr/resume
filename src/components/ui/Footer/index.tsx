@@ -39,10 +39,10 @@ export const Footer: React.FC<Props> = memo(function Footer({
     </List.Item>
   ))
   return (
-    <Container size={'lg'}>
+    <Container size={'lg'} style={{ margin: 0, padding: 0, maxWidth: '100%' }}>
       <footer
         style={{
-          padding: `${spacing[8]}px ${spacing[0]}px`,
+          padding: `${spacing[8]}px ${spacing[16]}px`,
           backgroundColor: semanticColors.white,
         }}
         {...args}
