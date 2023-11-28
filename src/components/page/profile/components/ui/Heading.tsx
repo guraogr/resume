@@ -17,7 +17,7 @@ export const Heading: React.FC<PropsWithChildren<Props>> = memo(
         <CustomText
           c={semanticColors.primary}
           type={TEXT_TYPE.SUB_HEADLINE}
-          mb={spacing[4]}
+          mb={spacing[2]}
         >
           {subTitle}
         </CustomText>

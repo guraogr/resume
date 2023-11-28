@@ -32,17 +32,19 @@ export const JobHisotryList: React.FC<Props> = memo(function Heading({
         }}
       >
         {histories.map((job, key) => (
-          <Grid.Col key={key} mb={spacing[4]} span={1}>
+          <Grid.Col key={key} mb={spacing[4]} span={1} display={'flex'}>
             <CompanyCard
               logo={job.logo}
               logoAlt={job.logoAlt}
               companyName={job.companyName}
               job={job.job}
-              workedTime={job.workedTime}
+              workedTime={job.desc}
+              desc2={job.desc2}
               exp={job.exp}
               handleClick={handleClick}
+              h={'100%'}
             >
-              {job.desc}
+              {job.workedTime}
             </CompanyCard>
           </Grid.Col>
         ))}

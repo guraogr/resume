@@ -22,7 +22,7 @@ export const theme: MantineThemeOverride = {
     fontWeight: 'bold',
     sizes: {
       h1: {
-        fontSize: 26,
+        fontSize: 30,
         lineHeight: 1.5,
         [`@media (max-width: ${BREAKPOINT_MAP.sm}px)`]: {
           fontSize: 22,

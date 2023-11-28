@@ -1,4 +1,4 @@
-import { Box, Container, Space, Title } from '@mantine/core'
+import { Box, Container } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
@@ -7,11 +7,10 @@ import CustomText from '@/components/ui/Text'
 import { spacing } from '@/constans'
 import { ProfilePageLayout } from '@/layouts/ProfilePageLayout'
 import { semanticColors } from '@/styles/colors'
-import { HEADINGS } from '@/styles/typography'
 
 const PhilosophySection: React.FC = memo(function PhilosophySection() {
   return (
-    <ProfilePageLayout bg={semanticColors.white} pt={spacing[6]}>
+    <ProfilePageLayout bg={semanticColors.white}>
       <Container size={'lg'} m={'auto'}>
         {/*
         <Space h={spacing[16]} />
@@ -53,8 +52,8 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
             ))}
           </Grid>
         </Box> */}
-        <Heading subTitle="価値観" mb={spacing[10]}>
-          何を・誰と・どんな風にやりたいか
+        <Heading subTitle="仕事への信条" mb={spacing[10]} ta={'center'}>
+          プロフェッショナリズム
           {/* {!isTabletScreen && <br />}
           それが私の働く目的です */}
         </Heading>
@@ -76,31 +75,17 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
           </Grid.Col>
         </Grid> */}
         <Box>
-          <Title size={HEADINGS.H3} order={3} mb={spacing[2]}>
-            1. What(何をしたいか)
-          </Title>
-          <CustomText mb={spacing[4]} sx={{ lineHeight: 2 }}>
-            自分にとって仕事は「人生を面白くしてくれるもの」であり、自分にとって幸福は「目の前のことに夢中になって楽しめる」ことです。
+          {/* <Title size={HEADINGS.H3} order={3} mb={spacing[2]}></Title> */}
+          <CustomText
+            mb={spacing[4]}
+            sx={{ lineHeight: 2 }}
+            maw={540}
+            ta={'center'}
+            mx={'auto'}
+          >
+            理想の体験を設計する専門家としての責任を重んじています。
             <br />
-            {/* 子供の頃から活き活きと働いている大人を見たことがなく、社会人になってから毎日が楽しいと思えなくなっている人たちを見てきて、それが当たり前とされる社会がに対して違和感を感じていました。
-            <br /> */}
-            仕事と人を上手く調和させることで人の幸せに貢献していきたいという根源的な欲求があります。
-          </CustomText>
-          <Space h={spacing[4]} />
-          <Title size={HEADINGS.H3} order={3} mb={spacing[2]}>
-            2. Who(誰としたいか)
-          </Title>
-          <CustomText mb={spacing[4]} sx={{ lineHeight: 2 }}>
-            自分と同じ熱い気持ちを持ち、愛情を持って一人一人に向き合うことができる人たちと過程を楽しむ
-          </CustomText>
-          <Space h={spacing[4]} />
-          <Title size={HEADINGS.H3} order={3} mb={spacing[2]}>
-            3. How(どういう風にしたいか)
-          </Title>
-          <CustomText mb={spacing[4]} sx={{ lineHeight: 2 }}>
-            信頼できる仲間と部活動のように熱中して働く
-            {/* 今までは、良いキャリアを積みたい、賞を取りたい、年収を上げたいなど自分自身のこうなりたいという結果に囚われ、本当に欲しかったものに対して盲目になっていました。 */}
-            <br />
+            徹底的な顧客目線、本質的な課題の特定と解決策の模索、これらを深く追求し続ける思考体力をファーストキャリアであるVisionalで学び、大切にしています。
           </CustomText>
         </Box>
         {/* <Space h={spacing[16]} />

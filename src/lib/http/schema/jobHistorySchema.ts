@@ -9,6 +9,7 @@ export const jobHistorySchema = z.object({
   job: z.string(),
   workedTime: z.string(),
   desc: z.string(),
+  desc2: z.string(),
   jobType: z.enum(JobType).array(),
   exp: z.string(),
 })

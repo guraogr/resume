@@ -1,12 +1,10 @@
-import { Box, Container, Flex, Loader, Space } from '@mantine/core'
+import { Container, Flex, Loader, Space } from '@mantine/core'
 import { memo } from 'react'
 
 import { Heading } from './ui/Heading'
 import { JobHisotryList } from './ui/JobHistoryList'
-import { SubHeading } from './ui/SubHeading'
 
 import { spacing } from '@/constans'
-import { JobType } from '@/constans/http'
 import { useFetchJobHistory } from '@/features/JobHistory/api/fetchJobHistory'
 import { ProfilePageLayout } from '@/layouts/ProfilePageLayout'
 import { fetchJobHistoriesSchema } from '@/lib/http/schema/jobHistorySchema'
@@ -26,20 +24,20 @@ const HistorySection: React.FC = memo(function HistorySection() {
     throw new Error('問題が発生しました')
   }
   const fetchedJobHistory = fetchJobHistoriesSchema.parse(data).contents
-  const fulltimeJobHistory = fetchedJobHistory.filter(
-    (history) => history.jobType[0] === JobType[0]
-  )
-  const partimeJobHistory = fetchedJobHistory.filter(
-    (history) => history.jobType[0] === JobType[1]
-  )
-  const internHistory = fetchedJobHistory.filter(
-    (history) => history.jobType[0] === JobType[2]
-  )
+  // const fulltimeJobHistory = fetchedJobHistory.filter(
+  //   (history) => history.jobType[0] === JobType[0]
+  // )
+  // const partimeJobHistory = fetchedJobHistory.filter(
+  //   (history) => history.jobType[0] === JobType[1]
+  // )
+  // const internHistory = fetchedJobHistory.filter(
+  //   (history) => history.jobType[0] === JobType[2]
+  // )
 
   return (
     <ProfilePageLayout bg={semanticColors.bg}>
       <Container size={'lg'} m={'auto'} id="my_history">
-        <Heading subTitle="業務経歴" mb={spacing[0]}>
+        <Heading subTitle="職務経歴" mb={spacing[0]}>
           今までの職歴
         </Heading>
         {/* <CustomText>
@@ -48,7 +46,8 @@ const HistorySection: React.FC = memo(function HistorySection() {
           これらの経験をもとにプロダクトの成長を推進する力を長期的に身につけていきたいと考えています。
         </CustomText> */}
         <Space h={spacing[16]} />
-        <Box component="section">
+        <JobHisotryList histories={fetchedJobHistory} />
+        {/* <Box component="section">
           <SubHeading desc={''} mb={spacing[6]}>
             正社員
           </SubHeading>
@@ -60,14 +59,14 @@ const HistorySection: React.FC = memo(function HistorySection() {
             業務委託
           </SubHeading>
           <JobHisotryList histories={partimeJobHistory} />
-        </Box>
+        </Box> */}
         <Space h={spacing[16]} />
-        <Box component="section">
+        {/* <Box component="section">
           <SubHeading desc={''} mb={spacing[6]}>
             アルバイト
           </SubHeading>
           <JobHisotryList histories={internHistory} />
-        </Box>
+        </Box> */}
       </Container>
     </ProfilePageLayout>
   )

@@ -6,8 +6,6 @@ import { spacing, path } from '@/constans'
 import { useScreen } from '@/hooks/useScreen'
 import { ProfilePageLayout } from '@/layouts/ProfilePageLayout'
 import { semanticColors } from '@/styles/colors'
-import { shadow } from '@/styles/shadow'
-import { HEADINGS } from '@/styles/typography'
 
 const ProfileSection: React.FC = memo(function ProfileSection() {
   const { isTabletScreen, styles } = useScreen()
@@ -15,9 +13,9 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
     <ProfilePageLayout
       bg={semanticColors.white}
       py={spacing[0]}
-      mb={spacing[20]}
+      mb={spacing[10]}
     >
-      <Box
+      {/* <Box
         h={180}
         sx={{
           backgroundImage: `url(${path.images}/background_sky.png)`,
@@ -27,7 +25,7 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-      ></Box>
+      ></Box> */}
       <Container size={'lg'}>
         <Box
           display={'flex'}
@@ -36,8 +34,8 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
             flexDirection: styles.direction,
             alignItems: styles.align,
             position: 'relative',
-            marginTop: '-80px',
-            boxShadow: shadow.normal,
+            margin: '64px 0 ',
+            // boxShadow: shadow.normal,
             borderRadius: 8,
           }}
           p={spacing[8]}
@@ -46,36 +44,27 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
           <Avatar
             src={`${path.images}/Avatar.png`}
             alt="おぐらひろきの自画像イラスト"
-            size={170}
+            size={240}
             mr={isTabletScreen ? spacing[0] : spacing[14]}
             mb={isTabletScreen ? spacing[4] : spacing[0]}
             sx={{
               filter: 'drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.06))',
-              height: 240,
+              height: 350,
             }}
           ></Avatar>
+
           <Box ta={isTabletScreen ? 'center' : 'left'}>
-            <Title mb={spacing[3]} size={HEADINGS.H3} order={1}>
-              Hiroki Ogura ｜自己紹介
+            <Title mb={spacing[5]} size={38} order={1}>
+              Hiroki Ogura
             </Title>
-            <CustomText mb={spacing[3]} ta={'left'}>
-              1999年京都府京丹後市出身。2021年3月ECCコンピュータ専門学校マルチメディア研究学科卒業。
+            <CustomText mb={spacing[3]} ta={'left'} sx={{ lineHeight: 2 }}>
+              B2Bサービスのデザインを得意とするプロダクトデザイナー。
               <br />
-              在学中は、2年間デザイナーとして制作会社・事業会社でインターンを経験後、GovTechスタートアップでUIデザイン業務に従事しつつ、個人でチームを結成して複数のプロダクト作りを行う。
+              ビズリーチ、Yumemiなどでの経験に加え、4つのスタートアップでSaaSプロダクトのデザインに携わってきました。
               <br />
+              顧客理解と設計を得意としており、HRMOSの大規模デザインシステム「Poliphony」の設計を手掛け、新規事業でのユーザーリサーチを通じてPMFを追求した経験があります。
               <br />
-              2021年4月に株式会社ビズリーチに入社。
-              <br />
-              UI/UXデザイン・クリエイティブ制作業務やフロントエンド開発に従事。
-              <br />
-              個人でも数社のSaaSスタートアップにてデザイン・開発に幅広く携わる。
-              <br />
-              <br />
-              2022年9月 株式会社ゆめみに転職
-              <br />
-              2023年8月 創業前から携わっていた株式会社ノックラーンへ正式に参画。
-              <br />
-              現在は、新規事業の立ち上げに関わる全般の活動に従事。
+              他分野に対する好奇心が旺盛で、デザインエンジニアとしてNext/TypeScriptを使用した実務経験があり、実装への理解を基にした設計を得意としています。
             </CustomText>
             {/* <Box
               component="a"
