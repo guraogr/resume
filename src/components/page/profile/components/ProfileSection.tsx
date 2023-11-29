@@ -65,6 +65,8 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
               顧客理解とデザインの行き来を得意としており、HRMOSの大規模デザインシステム「Poliphony」のデザインに関わり、PMFを目的とした新規事業のユーザーリサーチ経験があります。
               <br />
               他分野に対する好奇心が盛んで、デザインエンジニアとしてNext/TypeScriptを使用した実務経験があり、実装理解のあるデザインを得意としています。
+              <br />
+              複雑なドメインを理解することが好きで、主にB2Bサービスに携わってきました。
             </CustomText>
             {/* <Box
               component="a"
