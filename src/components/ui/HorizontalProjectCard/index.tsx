@@ -1,4 +1,4 @@
-import { Box, Flex, Title, Image } from '@mantine/core'
+import { Box, Flex, Title, Image, useMantineTheme, Space } from '@mantine/core'
 import Link from 'next/link'
 import { memo } from 'react'
 
@@ -16,6 +16,9 @@ interface Props {
   title: string
   productName: string
   category: string
+  role: string
+  time: string
+  desc: string
 }
 
 export const HorizontalProjectCard: React.FC<Props> = memo(
@@ -25,11 +28,16 @@ export const HorizontalProjectCard: React.FC<Props> = memo(
     thumbAlt,
     title,
     productName,
+    role,
+    time,
+    desc,
     category,
   }) {
     const { styles, isTabletScreen } = useScreen()
+    const theme = useMantineTheme()
+    const roles = role.split('/')
     return (
-      <Link href={`${id}`}>
+      <Link href={`${id}`} target="_blank">
         <Box
           component="article"
           display={'flex'}
@@ -43,9 +51,10 @@ export const HorizontalProjectCard: React.FC<Props> = memo(
               transform: 'translate(0, -6px)',
               opacity: '0.7',
             },
+            borderRadius: 10,
           }}
           px={spacing[4]}
-          py={spacing[4]}
+          py={spacing[6]}
           bg={semanticColors.white}
         >
           <Image
@@ -54,18 +63,35 @@ export const HorizontalProjectCard: React.FC<Props> = memo(
             maw={284}
           />
           <Box
-            ml={isTabletScreen ? spacing[0] : spacing[5]}
+            ml={isTabletScreen ? spacing[0] : spacing[8]}
             mt={isTabletScreen ? spacing[5] : spacing[0]}
           >
             <Flex gap={spacing[2]} c={semanticColors.primary} mb={spacing[1]}>
               <CustomText type={TEXT_TYPE.SUB_HEADLINE}>
                 {productName}
               </CustomText>
-              <CustomText type={TEXT_TYPE.SUB_HEADLINE}>{category}</CustomText>
             </Flex>
             <Title order={2} size={HEADINGS.H3} mb={spacing[2]}>
               {title}
             </Title>
+            <Flex gap={spacing[2]} mb={spacing[1]}>
+              <CustomText>{desc}</CustomText>
+            </Flex>
+            <Space h={spacing[4]} />
+            <Flex gap={spacing[2]}>
+              {roles.map((role, key) => (
+                <CustomText
+                  key={key}
+                  bg={theme.colors.blue[0]}
+                  type={TEXT_TYPE.CAPTION1}
+                  p={'2px 8px'}
+                  sx={{ borderRadius: theme.radius.md }}
+                  c={theme.colors.blue[9]}
+                >
+                  {role}
+                </CustomText>
+              ))}
+            </Flex>
           </Box>
         </Box>
       </Link>

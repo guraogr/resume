@@ -138,6 +138,9 @@ const ProjectPage = memo(function ProjectsPage() {
               title="デザイン負債を抱えた製品のUI再設計を担当。デザイナー・フロントエンドの橋渡しとなりプロジェクトを推進。"
               productName="ビズリーチ・キャンパス"
               category="UI改善"
+              role="担当、担当、担当"
+              time="2023年"
+              desc="ふぁえふぁふぇwふぇわえふぇわっふぁえふぁわwふぇあえwf"
             />
             <HorizontalProjectCard
               id="btmc9gikk5-3"
@@ -146,6 +149,9 @@ const ProjectPage = memo(function ProjectsPage() {
               title="HRMOSシリーズ全体で一貫した体験を提供するため、デザインシステム「Polyphony」のTable UI定義を担当。"
               productName="HRMOS"
               category="デザインシステム構築"
+              role="担当、担当、担当"
+              time="2023年"
+              desc="ふぁえふぁふぇwふぇわえふぇわっふぁえふぁわwふぇあえwf"
             />
             <HorizontalProjectCard
               id="8krhoql19-5y"
@@ -154,6 +160,9 @@ const ProjectPage = memo(function ProjectsPage() {
               title="土地と人との新しいコミュニケーションを創出する思い出SNSアプリ"
               productName="honu"
               category="コンテスト応募"
+              role="担当、担当、担当"
+              time="2023年"
+              desc="ふぁえふぁふぇwふぇわえふぇわっふぁえふぁわwふぇあえwf"
             />
             <HorizontalProjectCard
               id="a_-0tejwnm"
@@ -162,6 +171,9 @@ const ProjectPage = memo(function ProjectsPage() {
               title="学内で発生した過去の就活情報を検索する「Baseline」の立ち上げ"
               productName="baseline"
               category="DX"
+              role="担当、担当、担当"
+              time="2023年"
+              desc="ふぁえふぁふぇwふぇわえふぇわっふぁえふぁわwふぇあえwf"
             />
           </Stack>
         </Box>

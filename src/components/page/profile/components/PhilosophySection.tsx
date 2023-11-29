@@ -10,7 +10,7 @@ import { semanticColors } from '@/styles/colors'
 
 const PhilosophySection: React.FC = memo(function PhilosophySection() {
   return (
-    <ProfilePageLayout bg={semanticColors.white}>
+    <ProfilePageLayout bg={semanticColors.bg}>
       <Container size={'lg'} m={'auto'}>
         {/*
         <Space h={spacing[16]} />
