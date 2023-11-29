@@ -54,8 +54,6 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
         </Box> */}
         <Heading subTitle="仕事への信条" mb={spacing[10]} ta={'center'}>
           プロフェッショナリズム
-          {/* {!isTabletScreen && <br />}
-          それが私の働く目的です */}
         </Heading>
         {/* <Grid mb={spacing[9]} columns={isTabletScreen ? 1 : 5}>
           <Grid.Col span={1}>
@@ -79,13 +77,16 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
           <CustomText
             mb={spacing[4]}
             sx={{ lineHeight: 2 }}
-            maw={540}
+            maw={480}
             ta={'center'}
             mx={'auto'}
           >
             理想の体験を設計する専門家としての責任を重んじています。
             <br />
-            徹底的な顧客目線、本質的な課題の特定と解決策の模索、これらを深く追求し続ける思考体力をファーストキャリアであるVisionalで学び、大切にしています。
+            徹底的な顧客目線、本質的な課題の特定と解決策の模索、これらを深く追求し続けることを大切にしています。
+            <br />
+            <br />
+            ご興味を持っていただけましたらぜひ一度お話しできればと思います。
           </CustomText>
         </Box>
         {/* <Space h={spacing[16]} />

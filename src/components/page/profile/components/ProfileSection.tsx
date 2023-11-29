@@ -60,9 +60,9 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
             <CustomText mb={spacing[3]} ta={'left'} sx={{ lineHeight: 2 }}>
               B2Bサービスのデザインを得意とするプロダクトデザイナー。
               <br />
-              ビズリーチ、Yumemiなどでの経験に加え、4つのスタートアップでSaaSプロダクトのデザインに携わってきました。
+              ビズリーチ、Yumemiなどでの経験に加え、4社のスタートアップでSaaSプロダクトのデザインに携わってきました。
               <br />
-              顧客理解と設計を得意としており、HRMOSの大規模デザインシステム「Poliphony」の設計を手掛け、新規事業でのユーザーリサーチを通じてPMFを追求した経験があります。
+              顧客理解と設計を得意としており、HRMOSの大規模デザインシステム「Poliphony」の設計に関わり、PMFを目的とした新規事業のユーザーリサーチ経験があります。
               <br />
               他分野に対する好奇心が旺盛で、デザインエンジニアとしてNext/TypeScriptを使用した実務経験があり、実装への理解を基にした設計を得意としています。
             </CustomText>

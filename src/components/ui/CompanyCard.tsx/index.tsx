@@ -44,41 +44,48 @@ export const CompanyCard: React.FC<PropsWithChildren<Props>> = memo(
           }}
           {...args}
         >
-          <Image
-            mr={spacing[5]}
-            src={`${path.companyLogos}/${logo}`}
-            width={36}
-            alt={logoAlt}
-            mb={spacing[4]}
-          />
-          <Box>
-            <Box mb={spacing[4]}>
-              <CustomText type={TEXT_TYPE.SUB_HEADLINE} mb={spacing[2]}>
-                {companyName}
-              </CustomText>
-              <CustomText c={semanticColors.base_tirtiary} size="sm">
-                {children}
-              </CustomText>
-              <CustomText c={semanticColors.base_tirtiary} size="sm">
-                {job}
-              </CustomText>
-            </Box>
+          <Flex
+            h={'100%'}
+            sx={{ flexDirection: 'column', justifyContent: 'space-between' }}
+          >
             <Box>
+              <Image
+                mr={spacing[5]}
+                src={`${path.companyLogos}/${logo}`}
+                width={36}
+                alt={logoAlt}
+                mb={spacing[4]}
+              />
               <Box>
-                <CustomText fw={'bold'} mb={spacing[1]}>
-                  担当サービス
-                </CustomText>
-                <Box sx={{ lineHeight: 2 }} fz={14}>
-                  <Markdown source={workedTime} />
+                <Box mb={spacing[4]}>
+                  <CustomText type={TEXT_TYPE.SUB_HEADLINE} mb={spacing[2]}>
+                    {companyName}
+                  </CustomText>
+                  <CustomText c={semanticColors.base_tirtiary} size="sm">
+                    {children}
+                  </CustomText>
+                  <CustomText c={semanticColors.base_tirtiary} size="sm">
+                    {job}
+                  </CustomText>
                 </Box>
-              </Box>
-              <Space h={spacing[2]} />
-              <Box>
-                <CustomText fw={'bold'} mb={spacing[1]}>
-                  担当業務
-                </CustomText>
-                <Box sx={{ lineHeight: 2 }} fz={14}>
-                  <Markdown source={desc2} />
+                <Box>
+                  <Box>
+                    <CustomText fw={'bold'} mb={spacing[1]}>
+                      担当サービス
+                    </CustomText>
+                    <Box sx={{ lineHeight: 2 }} fz={14}>
+                      <Markdown source={workedTime} />
+                    </Box>
+                  </Box>
+                  <Space h={spacing[2]} />
+                  <Box>
+                    <CustomText fw={'bold'} mb={spacing[1]}>
+                      担当業務
+                    </CustomText>
+                    <Box sx={{ lineHeight: 2 }} fz={14}>
+                      <Markdown source={desc2} />
+                    </Box>
+                  </Box>
                 </Box>
               </Box>
             </Box>
@@ -94,7 +101,7 @@ export const CompanyCard: React.FC<PropsWithChildren<Props>> = memo(
                 業務内容を見る
               </Button>
             </Flex>
-          </Box>
+          </Flex>
         </Box>
       </Box>
     )

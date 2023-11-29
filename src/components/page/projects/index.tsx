@@ -61,30 +61,16 @@ const ProjectsPage = memo(function ProjectsPage() {
           >
             {PAGE_TITLE_MAP.PROJECTS}
           </Title>
-          <CustomText ta={'center'}>
-            アウトプットとして見せられるデザインプロジェクトの一部を載せています。
-            {/* <br />
-            この他の業務について知りたい場合は
-            <Link
-              color="primary"
-              style={{ borderBottom: `1px solid ${semanticColors.primary}` }}
-              href="/"
-            >
-              プロフィールページの業務経歴
-            </Link>
-            を参考にしてください。 */}
-          </CustomText>
-          <CustomText color={'red'} mt={spacing[3]} ta={'center'}>
-            ※
-            採用の場に限り公開となるため、クローズドな場でのみの閲覧でお願いいたします。
+          <CustomText color={'red'} ta={'center'}>
+            こちらは公開可能なプロジェクトの一部を掲載しています。
             <br />
-            外部公開はお控えください。
+            クローズドな場でのみ公開可能なため、外部公開はお控えください。
           </CustomText>
         </Container>
       </Box>
       <Container size={'lg'} py={spacing[10]}>
         <Tabs
-          defaultValue={workCategory[0]}
+          defaultValue={workCategory[2]}
           styles={{
             tab: {
               fontWeight: 'bold',
@@ -95,11 +81,11 @@ const ProjectsPage = memo(function ProjectsPage() {
           }}
         >
           <Tabs.List mb={spacing[6]} grow>
-            <Tabs.Tab value={workCategory[0]}>プロダクトデザイン</Tabs.Tab>
+            <Tabs.Tab value={workCategory[2]}>趣味制作</Tabs.Tab>
             <Tabs.Tab value={workCategory[1]}>
               コミュニケーションデザイン
             </Tabs.Tab>
-            <Tabs.Tab value={workCategory[2]}>趣味制作</Tabs.Tab>
+            <Tabs.Tab value={workCategory[0]}>プロダクトデザイン</Tabs.Tab>
           </Tabs.List>
           {isLoading ? (
             <Flex w={'100%'} display={'flex'} justify={'center'}>
