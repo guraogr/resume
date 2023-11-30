@@ -58,6 +58,8 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
               Hiroki Ogura
             </Title>
             <CustomText mb={spacing[3]} ta={'left'} sx={{ lineHeight: 2 }}>
+              1999年京都府京丹後市出身。
+              <br />
               ビズリーチ、Yumemi社での経験に加え、4社のSaaSスタートアップでプロダクトデザインに携わってきました。
               <br />
               顧客理解とデザインの行き来を得意としており、HRMOSの大規模デザインシステム「Poliphony」のデザインに関わり、PMFを目的とした新規事業のユーザーリサーチ経験があります。
