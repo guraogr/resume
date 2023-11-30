@@ -1,4 +1,4 @@
-import { Container, Loader, Flex, Space, Box } from '@mantine/core'
+import { Container, Loader, Flex, Space, Box, Divider } from '@mantine/core'
 import { useRouter } from 'next/router'
 import { memo } from 'react'
 
@@ -75,7 +75,7 @@ const ProjectPage = memo(function ProjectsPage() {
   return (
     <>
       <Breadcrumbs items={BreadcrumbsItems} />
-      <Container size={'md'} px={isTabletScreen ? spacing[0] : spacing[10]}>
+      <Container size={1000} px={isTabletScreen ? spacing[0] : spacing[10]}>
         <Box
           component="section"
           bg={semanticColors.white}
@@ -110,11 +110,13 @@ const ProjectPage = memo(function ProjectsPage() {
             </Button>
           </Flex> */}
           <Space h={spacing[20]} />
+          <Divider />
+          <Space h={spacing[20]} />
+          <Box>
+            <ReccomendWorks />
+          </Box>
         </Box>
       </Container>
-      <Box maw={1000} m="auto">
-        <ReccomendWorks />
-      </Box>
     </>
   )
 })

@@ -65,6 +65,7 @@ export const HorizontalProjectCard: React.FC<Props> = memo(
           <Box
             ml={isTabletScreen ? spacing[0] : spacing[8]}
             mt={isTabletScreen ? spacing[5] : spacing[0]}
+            sx={{ flexBasis: 'fit-content' }}
           >
             <Flex gap={spacing[2]} c={semanticColors.primary} mb={spacing[1]}>
               <CustomText type={TEXT_TYPE.SUB_HEADLINE}>
