@@ -67,6 +67,10 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
               他分野に対する好奇心が盛んで、デザインエンジニアとしてNext/TypeScriptを使用した実務経験があり、実装理解のあるデザインを得意としています。
               <br />
               複雑なドメインを理解することが好きで、主にB2Bサービスに携わってきました。
+              <br />
+              <br />
+              直近はシニア・プロダクトデザイナーを目指して、顧客課題の抽出や解決の練度を上げていきたいと考えています。
+              【興味】UXリサーチ / HCDプロセスの実践 / PdM領域
             </CustomText>
             {/* <Box
               component="a"
