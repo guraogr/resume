@@ -58,7 +58,7 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
               Hiroki Ogura
             </Title>
             <CustomText mb={spacing[3]} ta={'left'} sx={{ lineHeight: 2 }}>
-              1999年京都府京丹後市出身。
+              1999年3月25日、京都府京丹後市出身。
               <br />
               ビズリーチ、Yumemi社での経験に加え、4社のSaaSスタートアップでプロダクトデザインに携わってきました。
               <br />
