@@ -52,9 +52,6 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
             ))}
           </Grid>
         </Box> */}
-        <Heading subTitle="仕事への信条" mb={spacing[10]} ta={'center'}>
-          プロフェッショナリズム
-        </Heading>
         {/* <Grid mb={spacing[9]} columns={isTabletScreen ? 1 : 5}>
           <Grid.Col span={1}>
             <TextCard>個性</TextCard>
@@ -72,18 +69,22 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
             <TextCard>自信</TextCard>
           </Grid.Col>
         </Grid> */}
+        <Heading subTitle="仕事に対する信条" mb={spacing[10]} ta={'center'}>
+          プロフェッショナリズム
+        </Heading>
+
         <Box>
           {/* <Title size={HEADINGS.H3} order={3} mb={spacing[2]}></Title> */}
           <CustomText
             mb={spacing[4]}
             sx={{ lineHeight: 2 }}
-            maw={480}
+            maw={620}
             ta={'center'}
             mx={'auto'}
           >
-            理想の体験を設計する専門家としての責任を重んじています。
+            理想の体験をプロダクトに落とし込む専門家としての責任を重んじています。
             <br />
-            徹底的な顧客目線、本質的な課題の特定と解決策の模索、これらを深く追求し続けることを大切にしています。
+            良いプロダクトを作るためには徹底的な顧客理解、本質的な課題の特定と解決策の模索が必要不可欠であり、これらを深く追求し続けることを大切にしています。
             <br />
             <br />
             ご興味を持っていただけましたらぜひ一度お話しできればと思います。
