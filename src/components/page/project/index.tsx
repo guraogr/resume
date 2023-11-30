@@ -2,6 +2,8 @@ import { Container, Loader, Flex, Space, Button, Box } from '@mantine/core'
 import { useRouter } from 'next/router'
 import { memo, useCallback } from 'react'
 
+import { ReccomendWorks } from '../profile/components/ui/ReccomendWorks'
+
 import AboutProject from './components/aboutProject'
 
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
@@ -108,65 +110,11 @@ const ProjectPage = memo(function ProjectsPage() {
             </Button>
           </Flex>
           <Space h={spacing[20]} />
-          {/* <Title
-            order={2}
-            size={HEADINGS.H3}
-            mb={spacing[2]}
-            ta={isTabletScreen ? 'center' : 'left'}
-          >
-            おすすめの作品
-          </Title> */}
-          {/* <Stack
-            spacing={isTabletScreen ? spacing[8] : spacing[4]}
-            px={isTabletScreen ? spacing[6] : spacing[0]}
-          >
-            <HorizontalProjectCard
-              id="4p-kg9subsp"
-              thumb="campus.png"
-              thumbAlt="ビズリーチキャンパスのロゴ"
-              title="デザイン負債を抱えた製品のUI再設計を担当。デザイナー・フロントエンドの橋渡しとなりプロジェクトを推進。"
-              productName="ビズリーチ・キャンパス"
-              category="UI改善"
-              role="担当、担当、担当"
-              time="2023年"
-              desc="ふぁえふぁふぇwふぇわえふぇわっふぁえふぁわwふぇあえwf"
-            />
-            <HorizontalProjectCard
-              id="btmc9gikk5-3"
-              thumb="poli.png"
-              thumbAlt="Poliphonyのサムネイル"
-              title="HRMOSシリーズ全体で一貫した体験を提供するため、デザインシステム「Polyphony」のTable UI定義を担当。"
-              productName="HRMOS"
-              category="デザインシステム構築"
-              role="担当、担当、担当"
-              time="2023年"
-              desc="ふぁえふぁふぇwふぇわえふぇわっふぁえふぁわwふぇあえwf"
-            />
-            <HorizontalProjectCard
-              id="8krhoql19-5y"
-              thumb="honu.png"
-              thumbAlt="honuのロゴ"
-              title="土地と人との新しいコミュニケーションを創出する思い出SNSアプリ"
-              productName="honu"
-              category="コンテスト応募"
-              role="担当、担当、担当"
-              time="2023年"
-              desc="ふぁえふぁふぇwふぇわえふぇわっふぁえふぁわwふぇあえwf"
-            />
-            <HorizontalProjectCard
-              id="a_-0tejwnm"
-              thumb="baseline.png"
-              thumbAlt="baselineのサムネイル"
-              title="学内で発生した過去の就活情報を検索する「Baseline」の立ち上げ"
-              productName="baseline"
-              category="DX"
-              role="担当、担当、担当"
-              time="2023年"
-              desc="ふぁえふぁふぇwふぇわえふぇわっふぁえふぁわwふぇあえwf"
-            />
-          </Stack> */}
         </Box>
       </Container>
+      <Box maw={1000} m="auto">
+        <ReccomendWorks />
+      </Box>
     </>
   )
 })
