@@ -37,7 +37,7 @@ export const ReccomendWorks = memo(function ListItem() {
       </Box>
       <Box mb={56}>
         <Title mb={spacing[5]} size={'h3'} order={1}>
-          UXリサーチ
+          UX・サービスデザイン
         </Title>
         <HorizontalProjectCard
           id="https://design.visional.inc/archives/6770"
@@ -58,9 +58,9 @@ export const ReccomendWorks = memo(function ListItem() {
           title="新規事業立ち上げに伴うUXリサーチ"
           productName="相続や人材領域の新規事業"
           category=""
-          role="デプスインタビュー/KJ法/VPC/ヒアリングシート作成/ファシリテーション/WEBデザイン"
+          role="デプスインタビュー/KJ法/ヒアリングシート作成/ファシリテーション/WEBデザイン"
           time="2023年"
-          desc="複数の新規事業立ち上げに伴い、相続や人材領域にてニーズ調査を行いました。ヒアリングシートの作成や業務委託メンバーを巻き込んだデプスインタビューの実施。HCDプロセスを参考にした仮説検証を行いました。"
+          desc="相続領域の新規事業立ち上げに伴いニーズ調査を行いました。ヒアリングシートの作成や業務委託メンバーを巻き込んだデプスインタビューを実施しました。"
         />
         <Space h={16} />
         <HorizontalProjectCard
@@ -72,7 +72,7 @@ export const ReccomendWorks = memo(function ListItem() {
           category=""
           role="デプスインタビュー/ビジネスモデルキャンバス/VPC/ヒアリングシート作成/WEBデザイン/バナー作成/ロゴ制作"
           time="2023年"
-          desc="複数の新規事業立ち上げに伴い、相続や人材領域にてニーズ調査を行いました。ヒアリングシートの作成や業務委託メンバーを巻き込んだデプスインタビューの実施。HCDプロセスを参考にした仮説検証を行いました。"
+          desc="人材領域における新規事業立ち上げを担当しました。HCDプロセスを参考にプロトタイプの作成や仮説検証を実施しました"
         />
       </Box>
 
