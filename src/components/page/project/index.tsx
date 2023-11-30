@@ -75,7 +75,7 @@ const ProjectPage = memo(function ProjectsPage() {
   return (
     <>
       <Breadcrumbs items={BreadcrumbsItems} />
-      <Container size={1000} px={isTabletScreen ? spacing[0] : spacing[10]}>
+      <Container size={'md'} px={isTabletScreen ? spacing[0] : spacing[10]}>
         <Box
           component="section"
           bg={semanticColors.white}
