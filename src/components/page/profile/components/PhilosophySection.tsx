@@ -87,7 +87,7 @@ const PhilosophySection: React.FC = memo(function PhilosophySection() {
             良いプロダクトを作るためには徹底的な顧客理解、本質的な課題の特定と解決策の模索が必要不可欠であり、これらを深く追求し続けることを大切にしています。
             <br />
             <br />
-            ご興味を持っていただけましたらぜひ一度お話しできればと思います。
+            ご興味を持っていただけましたらぜひ一度お話しさせてください！
           </CustomText>
         </Box>
         {/* <Space h={spacing[16]} />
