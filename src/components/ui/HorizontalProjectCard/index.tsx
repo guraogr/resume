@@ -78,7 +78,7 @@ export const HorizontalProjectCard: React.FC<Props> = memo(
               <CustomText>{desc}</CustomText>
             </Flex>
             <Space h={spacing[4]} />
-            <Flex gap={spacing[2]}>
+            <Flex gap={spacing[2]} sx={{ flexWrap: 'wrap' }}>
               {roles.map((role, key) => (
                 <CustomText
                   key={key}

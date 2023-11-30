@@ -1,6 +1,6 @@
-import { Container, Loader, Flex, Space, Button, Box } from '@mantine/core'
+import { Container, Loader, Flex, Space, Box } from '@mantine/core'
 import { useRouter } from 'next/router'
-import { memo, useCallback } from 'react'
+import { memo } from 'react'
 
 import { ReccomendWorks } from '../profile/components/ui/ReccomendWorks'
 
@@ -21,13 +21,13 @@ const ProjectPage = memo(function ProjectsPage() {
   const { data, isLoading, isError } = useFetchProject(id as string)
   const { isTabletScreen } = useScreen()
 
-  const handleClick = useCallback(
-    (e: MouseEvent) => {
-      e.preventDefault()
-      void router.push('/projects')
-    },
-    [router]
-  )
+  // const handleClick = useCallback(
+  //   (e: MouseEvent) => {
+  //     e.preventDefault()
+  //     void router.push('/projects')
+  //   },
+  //   [router]
+  // )
 
   if (isLoading) {
     return (
@@ -98,7 +98,7 @@ const ProjectPage = memo(function ProjectsPage() {
           <Box sx={{ lineHeight: 2 }}>
             <Markdown source={contents} />
           </Box>
-          <Space h={spacing[20]} />
+          {/* <Space h={spacing[20]} />
           <Flex justify={'center'}>
             <Button
               onClick={(e: any) => {
@@ -108,7 +108,7 @@ const ProjectPage = memo(function ProjectsPage() {
             >
               作品一覧に戻る
             </Button>
-          </Flex>
+          </Flex> */}
           <Space h={spacing[20]} />
         </Box>
       </Container>
