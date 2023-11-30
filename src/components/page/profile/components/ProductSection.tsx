@@ -69,7 +69,6 @@ const ProductSection: React.FC = memo(function ProductSection() {
             desc="社内で浸透していないペルソナの再設計とチームへの浸透を実施しました。デプスインタビューやアンケート調査をもとにチームを巻き込んだペルソナ設計を実施。浸透度を高めるワークショップの実施やペルソナに関するテストを開発チーム30名に向けて行い、定量的に理解度向上の成果を証明しました。"
           />
           <Space h={16} />
-
           <HorizontalProjectCard
             id="project/gnoyw30i5m"
             thumb="knocklearn.png"
@@ -78,6 +77,18 @@ const ProductSection: React.FC = memo(function ProductSection() {
             productName="相続や人材領域の新規事業"
             category=""
             role="デプスインタビュー/KJ法/VPC/ヒアリングシート作成/ファシリテーション/WEBデザイン"
+            time="2023年"
+            desc="複数の新規事業立ち上げに伴い、相続や人材領域にてニーズ調査を行いました。ヒアリングシートの作成や業務委託メンバーを巻き込んだデプスインタビューの実施。HCDプロセスを参考にした仮説検証を行いました。"
+          />
+          <Space h={16} />
+          <HorizontalProjectCard
+            id="project/uemce6007"
+            thumb="michitel.png"
+            thumbAlt="ミチテルのロゴ"
+            title="新規事業の立ち上げに伴うサービスデザイン"
+            productName="若手人材向けキャリアチェンジ支援事業"
+            category=""
+            role="デプスインタビュー/ビジネスモデルキャンバス/VPC/ヒアリングシート作成/WEBデザイン/バナー作成/ロゴ制作"
             time="2023年"
             desc="複数の新規事業立ち上げに伴い、相続や人材領域にてニーズ調査を行いました。ヒアリングシートの作成や業務委託メンバーを巻き込んだデプスインタビューの実施。HCDプロセスを参考にした仮説検証を行いました。"
           />

@@ -1,20 +1,10 @@
-import {
-  Container,
-  Loader,
-  Flex,
-  Stack,
-  Space,
-  Button,
-  Box,
-  Title,
-} from '@mantine/core'
+import { Container, Loader, Flex, Space, Button, Box } from '@mantine/core'
 import { useRouter } from 'next/router'
 import { memo, useCallback } from 'react'
 
 import AboutProject from './components/aboutProject'
 
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
-import { HorizontalProjectCard } from '@/components/ui/HorizontalProjectCard'
 import { Markdown } from '@/components/ui/MarkDown'
 import { spacing } from '@/constans'
 import { PAGE_TITLE_MAP } from '@/constans/title'
@@ -22,7 +12,6 @@ import { useFetchProject } from '@/features/Projects/api/fetchProject'
 import { useScreen } from '@/hooks/useScreen'
 import { projectSchema } from '@/lib/http/schema/projectsSchema'
 import { semanticColors } from '@/styles/colors'
-import { HEADINGS } from '@/styles/typography'
 
 const ProjectPage = memo(function ProjectsPage() {
   const router = useRouter()
@@ -119,15 +108,15 @@ const ProjectPage = memo(function ProjectsPage() {
             </Button>
           </Flex>
           <Space h={spacing[20]} />
-          <Title
+          {/* <Title
             order={2}
             size={HEADINGS.H3}
             mb={spacing[2]}
             ta={isTabletScreen ? 'center' : 'left'}
           >
             おすすめの作品
-          </Title>
-          <Stack
+          </Title> */}
+          {/* <Stack
             spacing={isTabletScreen ? spacing[8] : spacing[4]}
             px={isTabletScreen ? spacing[6] : spacing[0]}
           >
@@ -175,7 +164,7 @@ const ProjectPage = memo(function ProjectsPage() {
               time="2023年"
               desc="ふぁえふぁふぇwふぇわえふぇわっふぁえふぁわwふぇあえwf"
             />
-          </Stack>
+          </Stack> */}
         </Box>
       </Container>
     </>
