@@ -9,6 +9,75 @@ export const ReccomendWorks = memo(function ListItem() {
     <>
       <Box mb={56}>
         <Title mb={spacing[5]} size={'h3'} order={1}>
+          ビジュアルデザイン
+        </Title>
+        <HorizontalProjectCard
+          id="project/3ehjobudnux1"
+          thumb="biz_comu.png"
+          thumbAlt="Bizreachのロゴ"
+          title="クリエイティブ制作"
+          productName="ハイクラス転職サイト「ビズリーチ」"
+          category=""
+          role="WEBデザイン/バナー制作"
+          time="2023年"
+          desc="
+            マーケターと連携しながらサービスの集客用バナーやLPの制作を担当しました。"
+        />
+        <Space h={16} />
+        <HorizontalProjectCard
+          id="project/g6wps-_ojpe"
+          thumb="youtube.png"
+          thumbAlt="YouTubeのサムネイル"
+          title="YouTubeサムネイルのデザイン"
+          productName="5分でわかるバックオフィス by マネーフォワード クラウド"
+          category=""
+          role="ビジュアルデザイン"
+          time="2023年"
+          desc="YouTubeサムネイルのデザインを担当しました。"
+        />
+      </Box>
+      <Box mb={56}>
+        <Title mb={spacing[5]} size={'h3'} order={1}>
+          UX・サービスデザイン
+        </Title>
+        <HorizontalProjectCard
+          id="https://design.visional.inc/archives/6770"
+          thumb="yoshiko.png"
+          thumbAlt="ペルソナのサムネイル"
+          title="浸透していないペルソナを機能させる"
+          productName="OB/OG訪問ネットワーク「ビズリーチ・キャンパス」"
+          category=""
+          role="デプスインタビュー/アンケート調査/ワークショップ実施/ペルソナ作成/プレゼン/ブログ執筆"
+          time="2023年"
+          desc="社内で浸透していないペルソナの再設計とチームへの浸透を実施しました。デプスインタビューやアンケート調査をもとにチームを巻き込んだペルソナ設計を実施。浸透度を高めるワークショップの実施やペルソナに関するテストを開発チーム30名に向けて行い、定量的に理解度向上の成果を証明しました。"
+        />
+        <Space h={16} />
+        <HorizontalProjectCard
+          id="project/uemce6007"
+          thumb="michitel_lp.png"
+          thumbAlt="ミチテルのロゴ"
+          title="新規事業の立ち上げに伴うサービスデザイン"
+          productName="若手人材向けキャリアチェンジ支援事業"
+          category=""
+          role="デプスインタビュー/ビジネスモデルキャンバス/VPC/ヒアリングシート作成/WEBデザイン/バナー作成/ロゴ制作"
+          time="2023年"
+          desc="人材領域における新規事業立ち上げを担当しました。HCDプロセスを参考にプロトタイプの作成や仮説検証を実施しました"
+        />
+        <Space h={16} />
+        <HorizontalProjectCard
+          id="project/gnoyw30i5m"
+          thumb="knocklearn.png"
+          thumbAlt="KnockLearnのロゴ"
+          title="新規事業立ち上げに伴うUXリサーチ"
+          productName="相続や人材領域の新規事業"
+          category=""
+          role="デプスインタビュー/KJ法/ヒアリングシート作成/ファシリテーション/WEBデザイン"
+          time="2023年"
+          desc="相続領域の新規事業立ち上げに伴いニーズ調査を行いました。ヒアリングシートの作成や業務委託メンバーを巻き込んだデプスインタビューを実施しました。"
+        />
+      </Box>
+      <Box mb={56}>
+        <Title mb={spacing[5]} size={'h3'} order={1}>
           UI再設計・デザインシステム構築
         </Title>
         <HorizontalProjectCard
@@ -33,46 +102,6 @@ export const ReccomendWorks = memo(function ListItem() {
           role="UIデザイン"
           time="2023年"
           desc="HRMOSシリーズ全体で利用可能なTable UIの設計を行いました。HRMOSシリーズはCORE、労務、給与、1on1など、各プロダクトで使用されるTable UIの外観や仕様に違いがあり、HRMOSシリーズ全体として一貫した体験を提供できない課題に着手しました。"
-        />
-      </Box>
-      <Box mb={56}>
-        <Title mb={spacing[5]} size={'h3'} order={1}>
-          UX・サービスデザイン
-        </Title>
-        <HorizontalProjectCard
-          id="https://design.visional.inc/archives/6770"
-          thumb="yoshiko.png"
-          thumbAlt="ペルソナのサムネイル"
-          title="浸透していないペルソナを機能させる"
-          productName="OB/OG訪問ネットワーク「ビズリーチ・キャンパス」"
-          category=""
-          role="デプスインタビュー/アンケート調査/ワークショップ実施/ペルソナ作成/プレゼン/ブログ執筆"
-          time="2023年"
-          desc="社内で浸透していないペルソナの再設計とチームへの浸透を実施しました。デプスインタビューやアンケート調査をもとにチームを巻き込んだペルソナ設計を実施。浸透度を高めるワークショップの実施やペルソナに関するテストを開発チーム30名に向けて行い、定量的に理解度向上の成果を証明しました。"
-        />
-        <Space h={16} />
-        <HorizontalProjectCard
-          id="project/gnoyw30i5m"
-          thumb="knocklearn.png"
-          thumbAlt="KnockLearnのロゴ"
-          title="新規事業立ち上げに伴うUXリサーチ"
-          productName="相続や人材領域の新規事業"
-          category=""
-          role="デプスインタビュー/KJ法/ヒアリングシート作成/ファシリテーション/WEBデザイン"
-          time="2023年"
-          desc="相続領域の新規事業立ち上げに伴いニーズ調査を行いました。ヒアリングシートの作成や業務委託メンバーを巻き込んだデプスインタビューを実施しました。"
-        />
-        <Space h={16} />
-        <HorizontalProjectCard
-          id="project/uemce6007"
-          thumb="michitel.png"
-          thumbAlt="ミチテルのロゴ"
-          title="新規事業の立ち上げに伴うサービスデザイン"
-          productName="若手人材向けキャリアチェンジ支援事業"
-          category=""
-          role="デプスインタビュー/ビジネスモデルキャンバス/VPC/ヒアリングシート作成/WEBデザイン/バナー作成/ロゴ制作"
-          time="2023年"
-          desc="人材領域における新規事業立ち上げを担当しました。HCDプロセスを参考にプロトタイプの作成や仮説検証を実施しました"
         />
       </Box>
 
@@ -145,35 +174,6 @@ export const ReccomendWorks = memo(function ListItem() {
           time=""
           desc="2021年開催のデザインシップとCocoda!が協力して開催する「デザインの越境」をテーマとしたデザインコンテストに応募しました。2万5000人のユーザーを抱えるデザイナーコミュニティ「Cocoda!」の機能提案とリデザインに挑戦し、最優秀賞とReDesigner賞を受賞しました。
             "
-        />
-      </Box>
-      <Box mb={56}>
-        <Title mb={spacing[5]} size={'h3'} order={1}>
-          ビジュアルデザイン
-        </Title>
-        <HorizontalProjectCard
-          id="project/3ehjobudnux1"
-          thumb="biz_comu.png"
-          thumbAlt="Bizreachのロゴ"
-          title="クリエイティブ制作"
-          productName="ハイクラス転職サイト「ビズリーチ」"
-          category=""
-          role="WEBデザイン/バナー制作"
-          time="2023年"
-          desc="
-            マーケターと連携しながらサービスの集客用バナーやLPの制作を担当しました。"
-        />
-        <Space h={16} />
-        <HorizontalProjectCard
-          id="project/g6wps-_ojpe"
-          thumb="youtube.png"
-          thumbAlt="YouTubeのサムネイル"
-          title="YouTubeサムネイルのデザイン"
-          productName="5分でわかるバックオフィス by マネーフォワード クラウド"
-          category=""
-          role="ビジュアルデザイン"
-          time="2023年"
-          desc="YouTubeサムネイルのデザインを担当しました。"
         />
       </Box>
     </>
