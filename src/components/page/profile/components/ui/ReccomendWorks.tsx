@@ -9,35 +9,6 @@ export const ReccomendWorks = memo(function ListItem() {
     <>
       <Box mb={56}>
         <Title mb={spacing[5]} size={'h3'} order={1}>
-          ビジュアルデザイン
-        </Title>
-        <HorizontalProjectCard
-          id="project/3ehjobudnux1"
-          thumb="biz_comu.png"
-          thumbAlt="Bizreachのロゴ"
-          title="クリエイティブ制作"
-          productName="ハイクラス転職サイト「ビズリーチ」"
-          category=""
-          role="WEBデザイン/バナー制作"
-          time="2023年"
-          desc="
-            マーケターと連携しながらサービスの集客用バナーやLPの制作を担当しました。"
-        />
-        <Space h={16} />
-        <HorizontalProjectCard
-          id="project/g6wps-_ojpe"
-          thumb="youtube.png"
-          thumbAlt="YouTubeのサムネイル"
-          title="YouTubeサムネイルのデザイン"
-          productName="5分でわかるバックオフィス by マネーフォワード クラウド"
-          category=""
-          role="ビジュアルデザイン"
-          time="2023年"
-          desc="YouTubeサムネイルのデザインを担当しました。"
-        />
-      </Box>
-      <Box mb={56}>
-        <Title mb={spacing[5]} size={'h3'} order={1}>
           UX・サービスデザイン
         </Title>
         <HorizontalProjectCard
@@ -131,6 +102,35 @@ export const ReccomendWorks = memo(function ListItem() {
           role="UI・UXデザイン/デザインプロセス整備"
           time="2023年"
           desc="新機能の開発におけるUIデザインを担当しました。建築工事特有の複雑なドメイン知識をキャッチアップし、CSやPdM、エンジニアとの密な連携を通して新機能のデザインを担当しました。"
+        />
+      </Box>
+      <Box mb={56}>
+        <Title mb={spacing[5]} size={'h3'} order={1}>
+          ビジュアルデザイン
+        </Title>
+        <HorizontalProjectCard
+          id="project/3ehjobudnux1"
+          thumb="biz_comu.png"
+          thumbAlt="Bizreachのロゴ"
+          title="クリエイティブ制作"
+          productName="ハイクラス転職サイト「ビズリーチ」"
+          category=""
+          role="WEBデザイン/バナー制作"
+          time="2023年"
+          desc="
+            マーケターと連携しながらサービスの集客用バナーやLPの制作を担当しました。"
+        />
+        <Space h={16} />
+        <HorizontalProjectCard
+          id="project/g6wps-_ojpe"
+          thumb="youtube.png"
+          thumbAlt="YouTubeのサムネイル"
+          title="YouTubeサムネイルのデザイン"
+          productName="5分でわかるバックオフィス by マネーフォワード クラウド"
+          category=""
+          role="ビジュアルデザイン"
+          time="2023年"
+          desc="YouTubeサムネイルのデザインを担当しました。"
         />
       </Box>
       <Box mb={56}>
