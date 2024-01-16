@@ -1,7 +1,6 @@
 import { memo } from 'react'
 
 import HistorySection from './components/HistorySection'
-import PhilosophySection from './components/PhilosophySection'
 import ProductSection from './components/ProductSection'
 import ProfileSection from './components/ProfileSection'
 
@@ -19,7 +18,7 @@ const ProfilePage = memo(function ProfilePage() {
       <ProfileSection />
       <HistorySection />
       <ProductSection />
-      <PhilosophySection />
+      {/* <PhilosophySection /> */}
     </>
   )
 })
