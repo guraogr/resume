@@ -104,7 +104,7 @@ export const ReccomendWorks = memo(function ListItem() {
           desc="新機能の開発におけるUIデザインを担当しました。建築工事特有の複雑なドメイン知識をキャッチアップし、CSやPdM、エンジニアとの密な連携を通して新機能のデザインを担当しました。"
         />
       </Box>
-      <Box mb={56}>
+      {/* <Box mb={56}>
         <Title mb={spacing[5]} size={'h3'} order={1}>
           ビジュアルデザイン
         </Title>
@@ -175,7 +175,7 @@ export const ReccomendWorks = memo(function ListItem() {
           desc="2021年開催のデザインシップとCocoda!が協力して開催する「デザインの越境」をテーマとしたデザインコンテストに応募しました。2万5000人のユーザーを抱えるデザイナーコミュニティ「Cocoda!」の機能提案とリデザインに挑戦し、最優秀賞とReDesigner賞を受賞しました。
             "
         />
-      </Box>
+      </Box> */}
     </>
   )
 })
