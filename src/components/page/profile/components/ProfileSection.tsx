@@ -67,7 +67,7 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
               <br />
               【得意な経験】
               <br />
-              ・新規事業の立ち上げ経験
+              ・新規事業のデザイン経験
               <br />
               ・シード期やアーリー期のスタートアップでの業務経験
               <br />
