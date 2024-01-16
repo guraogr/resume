@@ -65,7 +65,7 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
               越境を大切にしており、デザインエンジニアとしての経験や他業種との連携を得意としています。
               <br />
               <br />
-              【得意な経験】
+              【主な経験】
               <br />
               ・新規事業のデザイン経験
               <br />
