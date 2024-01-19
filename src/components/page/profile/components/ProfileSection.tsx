@@ -75,6 +75,8 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
               <br />
               ・デザインエンジニアとしての業務経験
               <br />
+              ・複雑なドメインを扱ったデザイン経験 (ConTech,GovTech,HRTech)
+              <br />
             </CustomText>
             {/* <Box
               component="a"
