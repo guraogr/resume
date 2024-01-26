@@ -65,7 +65,7 @@ const ProfileSection: React.FC = memo(function ProfileSection() {
               越境を大切にしており、デザインエンジニアとしての経験や他職種との連携を得意としています。
               <br />
               <br />
-              【強み】
+              【主な強み・経験】
               <br />
               ① UIデザイナー / デザインエンジニアの専門性
               <br />
