@@ -9,6 +9,46 @@ export const ReccomendWorks = memo(function ListItem() {
     <>
       <Box mb={56}>
         <Title mb={spacing[5]} size={'h3'} order={1}>
+          UX・サービスデザイン
+        </Title>
+        <HorizontalProjectCard
+          id="https://design.visional.inc/archives/6770"
+          thumb="yoshiko.png"
+          thumbAlt="ペルソナのサムネイル"
+          title="浸透していないペルソナを機能させる"
+          productName="OB/OG訪問ネットワーク「ビズリーチ・キャンパス」"
+          category=""
+          role="デプスインタビュー/アンケート調査/ワークショップ実施/ペルソナ作成/プレゼン/ブログ執筆"
+          time="2023年"
+          desc="社内で浸透していないペルソナの再設計とチームへの浸透を実施しました。デプスインタビューやアンケート調査をもとにチームを巻き込んだペルソナ設計を実施。浸透度を高めるワークショップの実施やペルソナに関するテストを開発チーム30名に向けて行い、定量的に理解度向上の成果を証明しました。"
+        />
+        <Space h={16} />
+        <HorizontalProjectCard
+          id="project/uemce6007"
+          thumb="michitel_lp.png"
+          thumbAlt="ミチテルのロゴ"
+          title="新規事業の立ち上げに伴うサービスデザイン"
+          productName="若手人材向けキャリアチェンジ支援事業"
+          category=""
+          role="デプスインタビュー/ビジネスモデルキャンバス/VPC/ヒアリングシート作成/WEBデザイン/バナー作成/ロゴ制作"
+          time="2023年"
+          desc="人材領域における新規事業立ち上げを担当しました。HCDプロセスを参考にプロトタイプの作成や仮説検証を実施しました"
+        />
+        <Space h={16} />
+        <HorizontalProjectCard
+          id="project/gnoyw30i5m"
+          thumb="knocklearn.png"
+          thumbAlt="KnockLearnのロゴ"
+          title="新規事業立ち上げに伴うUXリサーチ"
+          productName="相続や人材領域の新規事業"
+          category=""
+          role="デプスインタビュー/KJ法/ヒアリングシート作成/ファシリテーション/WEBデザイン"
+          time="2023年"
+          desc="相続領域の新規事業立ち上げに伴いニーズ調査を行いました。ヒアリングシートの作成や業務委託メンバーを巻き込んだデプスインタビューを実施しました。"
+        />
+      </Box>
+      <Box mb={56}>
+        <Title mb={spacing[5]} size={'h3'} order={1}>
           UI再設計・デザインシステム構築
         </Title>
         <HorizontalProjectCard
@@ -64,46 +104,7 @@ export const ReccomendWorks = memo(function ListItem() {
           desc="新機能の開発におけるUIデザインを担当しました。建築工事特有の複雑なドメイン知識をキャッチアップし、CSやPdM、エンジニアとの密な連携を通して新機能のデザインを担当しました。"
         />
       </Box>
-      <Box mb={56}>
-        <Title mb={spacing[5]} size={'h3'} order={1}>
-          UX・サービスデザイン
-        </Title>
-        <HorizontalProjectCard
-          id="https://design.visional.inc/archives/6770"
-          thumb="yoshiko.png"
-          thumbAlt="ペルソナのサムネイル"
-          title="浸透していないペルソナを機能させる"
-          productName="OB/OG訪問ネットワーク「ビズリーチ・キャンパス」"
-          category=""
-          role="デプスインタビュー/アンケート調査/ワークショップ実施/ペルソナ作成/プレゼン/ブログ執筆"
-          time="2023年"
-          desc="社内で浸透していないペルソナの再設計とチームへの浸透を実施しました。デプスインタビューやアンケート調査をもとにチームを巻き込んだペルソナ設計を実施。浸透度を高めるワークショップの実施やペルソナに関するテストを開発チーム30名に向けて行い、定量的に理解度向上の成果を証明しました。"
-        />
-        <Space h={16} />
-        <HorizontalProjectCard
-          id="project/uemce6007"
-          thumb="michitel_lp.png"
-          thumbAlt="ミチテルのロゴ"
-          title="新規事業の立ち上げに伴うサービスデザイン"
-          productName="若手人材向けキャリアチェンジ支援事業"
-          category=""
-          role="デプスインタビュー/ビジネスモデルキャンバス/VPC/ヒアリングシート作成/WEBデザイン/バナー作成/ロゴ制作"
-          time="2023年"
-          desc="人材領域における新規事業立ち上げを担当しました。HCDプロセスを参考にプロトタイプの作成や仮説検証を実施しました"
-        />
-        <Space h={16} />
-        <HorizontalProjectCard
-          id="project/gnoyw30i5m"
-          thumb="knocklearn.png"
-          thumbAlt="KnockLearnのロゴ"
-          title="新規事業立ち上げに伴うUXリサーチ"
-          productName="相続や人材領域の新規事業"
-          category=""
-          role="デプスインタビュー/KJ法/ヒアリングシート作成/ファシリテーション/WEBデザイン"
-          time="2023年"
-          desc="相続領域の新規事業立ち上げに伴いニーズ調査を行いました。ヒアリングシートの作成や業務委託メンバーを巻き込んだデプスインタビューを実施しました。"
-        />
-      </Box>
+
       {/* <Box mb={56}>
         <Title mb={spacing[5]} size={'h3'} order={1}>
           ビジュアルデザイン
